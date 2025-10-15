@@ -31,6 +31,9 @@ export default async function PageDetail({ params }: { params: { slug: string } 
       slug: {
         equals: params.slug,
       },
+      pageType: {
+        equals: 'standard', // Only get standard slug-based pages
+      },
     },
     limit: 1,
   })
@@ -54,13 +57,18 @@ export default async function PageDetail({ params }: { params: { slug: string } 
   )
 }
 
-// Generate static params for static site generation (optional but recommended)
+// Generate static params for standard pages only
 export async function generateStaticParams() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 
   const pages = await payload.find({
     collection: 'pages',
+    where: {
+      pageType: {
+        equals: 'standard',
+      },
+    },
     limit: 100,
   })
 
@@ -69,7 +77,7 @@ export async function generateStaticParams() {
   }))
 }
 
-// Generate metadata for SEO (optional but recommended)
+// Generate metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })

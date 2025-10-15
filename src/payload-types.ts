@@ -219,7 +219,17 @@ export interface Manufacturer {
 export interface Page {
   id: number;
   title: string;
+  /**
+   * URL-friendly version of the title
+   */
   slug: string;
+  /**
+   * Standard pages use dynamic routing, custom layouts have dedicated code
+   */
+  pageType: 'standard' | 'about';
+  /**
+   * Only used for standard slug-based pages
+   */
   content?: {
     root: {
       type: string;
@@ -235,6 +245,57 @@ export interface Page {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Use blocks for custom layout pages
+   */
+  blocks?:
+    | (
+        | {
+            heading: string;
+            subheading?: string | null;
+            backgroundImage?: (number | null) | Media;
+            ctaText?: string | null;
+            ctaLink?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            heading?: string | null;
+            content?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contentSection';
+          }
+        | {
+            features?:
+              | {
+                  title?: string | null;
+                  description?: string | null;
+                  icon?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'featuresGrid';
+          }
+      )[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -400,7 +461,45 @@ export interface ManufacturersSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  pageType?: T;
   content?: T;
+  blocks?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              heading?: T;
+              subheading?: T;
+              backgroundImage?: T;
+              ctaText?: T;
+              ctaLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        contentSection?:
+          | T
+          | {
+              heading?: T;
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        featuresGrid?:
+          | T
+          | {
+              features?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
 }
