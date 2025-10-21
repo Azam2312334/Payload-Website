@@ -226,7 +226,7 @@ export interface Page {
   /**
    * Standard pages use dynamic routing, custom layouts have dedicated code
    */
-  pageType: 'standard' | 'about';
+  pageType: 'standard' | 'about' | 'digitalContent';
   /**
    * Only used for standard slug-based pages
    */
@@ -246,9 +246,9 @@ export interface Page {
     [k: string]: unknown;
   } | null;
   /**
-   * Use blocks for custom layout pages
+   * Blocks for About page layout
    */
-  blocks?:
+  aboutBlocks?:
     | (
         | {
             heading: string;
@@ -293,6 +293,180 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'featuresGrid';
+          }
+      )[]
+    | null;
+  /**
+   * Blocks for Digital Content page layout
+   */
+  digitalContentBlocks?:
+    | (
+        | {
+            bannerText: string;
+            bannerDescription: string;
+            ctaText?: string | null;
+            ctaLink?: string | null;
+            backgroundImage: number | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'digitalContentHero';
+          }
+        | {
+            heading: string;
+            areas?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'focusArea';
+          }
+        | {
+            heading: string;
+            description: string;
+            image?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'globalChampion';
+          }
+        | {
+            heading: string;
+            description: string;
+            stats?:
+              | {
+                  label: string;
+                  value: string;
+                  icon?: (number | null) | Media;
+                  /**
+                   * Enter hex color code (e.g., #f3f4f6)
+                   */
+                  backgroundColor?: string | null;
+                  textColor?: ('black' | 'white') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'nationalImpact';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            companies?:
+              | {
+                  label: string;
+                  count: number;
+                  icon?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'industrySize';
+          }
+        | {
+            heading: string;
+            cards?:
+              | {
+                  title: string;
+                  description: string;
+                  url: string;
+                  image?: (number | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ourHighlights';
+          }
+        | {
+            heading: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  image: number | Media;
+                  url: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'programmesInitiatives';
+          }
+        | {
+            heading: string;
+            downloadLabel?: string | null;
+            items?:
+              | {
+                  title: string;
+                  image: number | Media;
+                  /**
+                   * Hex color code (e.g., #DDDAE4)
+                   */
+                  backgroundColor?: string | null;
+                  pdfFile: number | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ourPublications';
+          }
+        | {
+            title: string;
+            description: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            ctaText: string;
+            ctaLink: string;
+            backgroundImage?: (number | null) | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'getInTouch';
+          }
+        | {
+            heading: string;
+            questions?:
+              | {
+                  question: string;
+                  answer: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq';
           }
       )[]
     | null;
@@ -463,7 +637,7 @@ export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   pageType?: T;
   content?: T;
-  blocks?:
+  aboutBlocks?:
     | T
     | {
         hero?:
@@ -494,6 +668,153 @@ export interface PagesSelect<T extends boolean = true> {
                     title?: T;
                     description?: T;
                     icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
+  digitalContentBlocks?:
+    | T
+    | {
+        digitalContentHero?:
+          | T
+          | {
+              bannerText?: T;
+              bannerDescription?: T;
+              ctaText?: T;
+              ctaLink?: T;
+              backgroundImage?: T;
+              id?: T;
+              blockName?: T;
+            };
+        focusArea?:
+          | T
+          | {
+              heading?: T;
+              areas?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        globalChampion?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              image?: T;
+              id?: T;
+              blockName?: T;
+            };
+        nationalImpact?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              stats?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    icon?: T;
+                    backgroundColor?: T;
+                    textColor?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        industrySize?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              companies?:
+                | T
+                | {
+                    label?: T;
+                    count?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        ourHighlights?:
+          | T
+          | {
+              heading?: T;
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    url?: T;
+                    image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        programmesInitiatives?:
+          | T
+          | {
+              heading?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    image?: T;
+                    url?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        ourPublications?:
+          | T
+          | {
+              heading?: T;
+              downloadLabel?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    image?: T;
+                    backgroundColor?: T;
+                    pdfFile?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        getInTouch?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaText?: T;
+              ctaLink?: T;
+              backgroundImage?: T;
+              id?: T;
+              blockName?: T;
+            };
+        faq?:
+          | T
+          | {
+              heading?: T;
+              questions?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
                     id?: T;
                   };
               id?: T;

@@ -21,7 +21,8 @@ function extractTextFromLexical(content: any): string {
   return content.root.children.map(extractText).join('\n')
 }
 
-export default async function PageDetail({ params }: { params: { slug: string } }) {
+export default async function PageDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 
@@ -29,7 +30,7 @@ export default async function PageDetail({ params }: { params: { slug: string } 
     collection: 'pages',
     where: {
       slug: {
-        equals: params.slug,
+        equals: slug,
       },
       pageType: {
         equals: 'standard', // Only get standard slug-based pages
@@ -78,7 +79,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
 
@@ -86,7 +88,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     collection: 'pages',
     where: {
       slug: {
-        equals: params.slug,
+        equals: slug,
       },
     },
     limit: 1,

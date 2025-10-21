@@ -34,6 +34,8 @@ function getPageUrl(page: any): string {
       return '/'
     case 'about':
       return '/about'
+    case 'digitalContent':
+      return '/digitalcontent'
     case 'standard':
     default:
       return `/pages/${page.slug}`

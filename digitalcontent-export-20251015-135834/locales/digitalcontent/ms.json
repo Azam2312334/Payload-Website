@@ -1,0 +1,234 @@
+{
+  "learn_more": "Learn More",
+  "contact_us_label": "Contact Us",
+  "digital_creative_content": {
+    "seo": {
+      "title": "Digital Content",
+      "description": "Pushing Malaysia's Digital Creators to New Heights",
+      "canonical": "https://mdec.my/digitalcontent",
+      "metaImageUrl": "/static/images/digital-content/meta-image.webp",
+      "metaImageAlt": "Digital Content - MDEC"
+    },
+    "programmes_initiatives": {
+      "heading": "Other Programmes & Initiatives",
+      "items": [
+        {
+          "id": 6,
+          "title": "SEA Game Awards",
+          "description": "The SEA Game Awards is organised by MDEC, throughout the Southeast Asia countries and territories including other countries for the purpose of awarding outstanding games that have been developed in the Southeast Asian region.",
+          "image": "level-up-kl.webp",
+          "url": "/levelupkl2024/sea-game-awards"
+        },
+        {
+          "id": 7,
+          "title": "SEA Kre8tif! Awards",
+          "description": "The SEA Kre8tif! Awards is organised by MDEC, throughout the Southeast Asia countries and territories including other countries, for the purpose of awarding outstanding creative and advertising items for their outstanding works.",
+          "image": "sea-kre8tif-awards.webp",
+          "url": "/kre8tif/2023/sea-kre8tif-awards"
+        },
+        {
+          "id": 8,
+          "title": "Digital Creative Content (DCC) Industry Catalogue",
+          "description": "A centralised catalogue of Malaysian creative companies, designed to promote their services and content creators, and to connect them with buyers and distributors of digital content.",
+          "image": "industry-catalog.webp",
+          "url": "/industrycatalogue"
+        },
+        {
+          "id": 9,
+          "title": "Digital Content Creators Challenge (DC3)",
+          "description": "Digital Content Creators Challenge (DC3) is a platform for local talents to show their creativity and innovation in the digital content creation sector.",
+          "image": "dc3.webp",
+          "url": "/dc3"
+        },
+        {
+          "id": 10,
+          "title": "Digital Content Grant (DCG)",
+          "description": "The Digital Content Grant (DCG) is a government initiative launched in 2016, designed to support local creative content companies in developing, producing, and marketing their digital content in animation, digital games, digital comics, and creative technology content.",
+          "image": "dcg.webp",
+          "url": "/grants/dcg"
+        },
+        {
+          "id": 11,
+          "title": "Malaysia Virtual Production Originals (MyVirtuo)",
+          "description": "MYVIRTUO (Malaysia Virtual Production Originals) is an initiative aimed at supporting and accelerating the adoption of Virtual Production (VP) technologies in Malaysia. It seeks to empower local creators by providing funding, resources, and opportunities for industry collaboration to develop high-quality VP content.",
+          "image": "myvirtuo.webp",
+          "url": "/myvirtuo"
+        },
+        {
+          "id": 12,
+          "title": "Digital Games Testbed Programme",
+          "description": "Digital Games Testbed Programme aims to provide opportunities for excellent local game developers to identify and solve any gameplay, technical and performance issues that will be enhanced by crowdsourced feedback from a small group of players by developing games.",
+          "image": "dgtp.webp",
+          "url": "/digital-games-testbed"
+        },
+        {
+          "id": 13,
+          "title": "Animated Shorts Challenge",
+          "description": "The Animated Shorts Challenge is a platform to produce Malaysia's next generation of animation creators by bridging creators with international opportunities. It helps talents to inspire and challenge recognition.",
+          "image": "short-animation.webp",
+          "url": "/animated-shorts-challenge"
+        }
+      ]
+    },
+    "heroBanner": {
+      "cta": {
+        "here": "here",
+        "initiatives": "OUR INITIATIVES"
+      },
+      "imageAlt": "Digital Content Hero Image"
+    },
+    "main_tabs": {
+      "business": "Business",
+      "citizen": "Citizen",
+      "partners": "Partners"
+    },
+    "intro": {
+      "banner_text": "Pushing Malaysia's Digital Creators to New Heights",
+      "banner_desc": "Shining the spotlight on creativity"
+    },
+    "focus_area": {
+      "heading": "Our Focus Areas",
+      "talent": {
+        "title": "Talent",
+        "description": "Boosting capability through upskilling and enhance capacity by raising awareness and broadening access to the digital content industry"
+      },
+      "industry": {
+        "title": "Industry",
+        "description": "Boosting industry growth by improving quality and global competitiveness of local digital content through funding and business support"
+      },
+      "ip_commercialisation": {
+        "title": "IP Commercialisation",
+        "description": "Catalysing IP commercialisation to grow size and scope of local digital content companies via investment support"
+      },
+      "regional_hub": {
+        "title": "Regional Hub",
+        "description": "Positioning Malaysia as a regional hub for digital content by developing a cohesive structure of processes, incentives messaging"
+      }
+    },
+    "national_impact": {
+      "heading": "National Impact",
+      "description": "Malaysia's digital content market has grown substantially over the years. Here are the end-of-the-year figures based on Malaysia Digital Industry Report (MDIR) for 2023.",
+      "revenue": "In Revenue",
+      "export": "In Export Sales",
+      "jobs": "Jobs Created",
+      "investment": "Investment"
+    },
+    "global_champion": {
+      "heading": "Malaysia is shaping global champions in Digital Content",
+      "description": "Malaysia's rapidly maturing digital creative industry, which includes animations, movies, and video games, is proving to be a significant growth driver for the nation."
+    },
+    "industry_size": {
+      "heading": "Industry Size",
+      "description": "As Malaysia's digital content market continues to grow, the local digital creative content industry has also expanded in order to accommodate said growth.",
+      "animation_companies": "Animation Companies",
+      "creative_tech_companies": "Creative Tech Companies",
+      "games_companies": "Games & Interactive Media Companies"
+    },
+    "our_publications": {
+      "heading": "Our Publications",
+      "download_pdf": "DOWNLOAD PDF",
+      "items": [
+        {
+          "id": 1,
+          "title": "Southeast Asia Game Development Industry Talent Economics Report 2024",
+          "image": "southeast-asia-game-development-industry-talent-economics-report-2024.webp",
+          "backgroundColor": "#DDDAE4",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-Game-Talent-Economics-Report%202024_FINAL.pdf"
+        },
+        {
+          "id": 2,
+          "title": "Southeast Asia Digital Content Industry Talent Report 2022",
+          "image": "south-east-asia-digital-content-industry-report-2022.webp",
+          "backgroundColor": "#DBE4DA",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-digital-content-industry-report-2022.pdf"
+        },
+        {
+          "id": 3,
+          "title": "Southeast Asia Game Industry Report 2021",
+          "image": "southeast-asia-game-development-industry-talent-economics-report-2021.webp",
+          "backgroundColor": "#F3E6D4",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-game-industry-report-2021.pdf"
+        },
+        {
+          "id": 4,
+          "title": "Southeast Asia Animation Report: The Regional Digital Content Landscape 2018",
+          "image": "southeast-asia-animation-report--the-regional-digital-content-landscape-2018.webp",
+          "backgroundColor": "#E1C6D5",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-animation-report-2018.pdf"
+        },
+        {
+          "id": 5,
+          "title": "Southeast Asia Game Industry Talent Report 2016",
+          "image": "southeast-asia-game-industry-initiative-report-2016.webp",
+          "backgroundColor": "#EAE9EB",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-game-industry-initiative-report-2016.pdf"
+        },
+        {
+          "id": 6,
+          "title": "Southeast Asia Game Industry Initiative Report 2015",
+          "image": "southeast-asia-game-industry-initiative-report-2015.webp",
+          "backgroundColor": "#CDDEE6",
+          "downloadLink": "/static/pdf/digitalcontent/SEA-game-industry-initiative-report-2015.pdf"
+        }
+      ]
+    },
+    "our_highlights": {
+      "heading": "Our Highlights",
+      "cards": [
+        {
+          "id": 1,
+          "title": "IP360 Metaverse",
+          "description": "IP360 Metaverse initiative is built to push national investment and development opportunities for Malaysia-based creators and studios in digital content creation and creative tech.",
+          "url": "/ip360-metaverse"
+        },
+        {
+          "id": 2,
+          "title": "Kre8tif!",
+          "description": "Kre8tif! is the definitive business networking platform for the digital content industry in Malaysia and across South East Asia.",
+          "url": "/kre8tif"
+        },
+        {
+          "id": 3,
+          "title": "LEVEL UP KL",
+          "description": "LEVEL UP KL is a conference and networking event for professionals and companies in the gaming industry.",
+          "url": "/levelupkl"
+        },
+        {
+          "id": 4,
+          "title": "MYDCF",
+          "description": "MYDCF is a funding program to support the development of local digital creative content projects, including animation, games, and interactive media.",
+          "url": "/mydcf"
+        },
+        {
+          "id": 5,
+          "title": "IMMERSE KL",
+          "description": "To showcase the future of digital content creation within the realms of immersive technology (AR/VR) and Web3. MDEC aims to propel Malaysia to the forefront of digital innovation and establish it as a leading hub for content development.",
+          "url": "/immerse-kl"
+        },
+        {
+          "id": 6,
+          "title": "ASEAN Digital Content Summit 2025",
+          "description": "The summit highlights ASEAN digital content to boost growth, enhance skills, and strengthen the creative tech sector.",
+          "url": "/adcs2025"
+        }
+      ]
+    },
+    "get_in_touch": {
+      "title": "Get In Touch",
+      "desc": "If you do have any enquiries, please don’t hesitate to <strong>reach out to us.</strong>",
+      "cta": "CONTACT US",
+      "cta_link": "mailto:clic@mdec.com.my"
+    },
+    "faq_title": "FREQUENTLY ASKED QUESTIONS",
+    "faq": [
+      {
+        "question": "Who are we – Digital Content Development (DCD)?",
+        "answer": "MDEC to empower the Malaysia Digital Content ecosystem by enhancing digital content skills, strengthening the industry network, catalysing IP and driving industry to a global standard."
+      },
+      {
+        "question": "What are Major areas covered by DCD?",
+        "answer": "<ul><li>Game Development</li><li>Animation</li><li>Creative Tech</li></ul>"
+      }
+    ]
+  }
+}

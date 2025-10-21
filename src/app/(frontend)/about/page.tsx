@@ -45,8 +45,8 @@ export default async function AboutPage() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
       <h1>{page.title}</h1>
-      
-      {page.blocks?.map((block: any, index: number) => {
+
+      {page.aboutBlocks?.map((block: any, index: number) => {
         switch (block.blockType) {
           case 'hero':
             return (
@@ -61,10 +61,12 @@ export default async function AboutPage() {
                   />
                 )}
                 <h2 style={{ fontSize: '2.5rem', marginTop: '20px' }}>{block.heading}</h2>
-                {block.subheading && <p style={{ fontSize: '1.2rem', opacity: 0.8 }}>{block.subheading}</p>}
+                {block.subheading && (
+                  <p style={{ fontSize: '1.2rem', opacity: 0.8 }}>{block.subheading}</p>
+                )}
               </div>
             )
-          
+
           case 'contentSection':
             return (
               <div key={index} style={{ marginBottom: '40px' }}>
@@ -74,22 +76,27 @@ export default async function AboutPage() {
                 )}
               </div>
             )
-          
+
           case 'featuresGrid':
             return (
               <div key={index} style={{ marginBottom: '40px' }}>
-                <div style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                  gap: '24px' 
-                }}>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '24px',
+                  }}
+                >
                   {block.features?.map((feature: any, featureIndex: number) => (
-                    <div key={featureIndex} style={{ 
-                      padding: '24px', 
-                      background: '#f8f9fa', 
-                      borderRadius: '8px',
-                      textAlign: 'center'
-                    }}>
+                    <div
+                      key={featureIndex}
+                      style={{
+                        padding: '24px',
+                        background: '#f8f9fa',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                      }}
+                    >
                       {feature.icon && typeof feature.icon === 'object' && feature.icon.url && (
                         <Image
                           src={feature.icon.url}
@@ -106,7 +113,7 @@ export default async function AboutPage() {
                 </div>
               </div>
             )
-          
+
           default:
             return null
         }

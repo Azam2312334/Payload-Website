@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { AboutBlocks, DigitalContentBlocks } from './blocks'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -21,6 +22,7 @@ export const Pages: CollectionConfig = {
       },
     },
     {
+      label: 'Page Type',
       name: 'pageType',
       type: 'select',
       required: true,
@@ -33,6 +35,10 @@ export const Pages: CollectionConfig = {
         {
           label: 'Custom Layout - About',
           value: 'about',
+        },
+        {
+          label: 'Custom Layout - Digital Content',
+          value: 'digitalContent',
         },
       ],
       admin: {
@@ -47,46 +53,25 @@ export const Pages: CollectionConfig = {
         description: 'Only used for standard slug-based pages',
       },
     },
+    // About Page Blocks
     {
-      name: 'blocks',
+      name: 'aboutBlocks',
       type: 'blocks',
       admin: {
-        condition: (data) => data.pageType !== 'standard',
-        description: 'Use blocks for custom layout pages',
+        condition: (data) => data.pageType === 'about',
+        description: 'Blocks for About page layout',
       },
-      blocks: [
-        {
-          slug: 'hero',
-          fields: [
-            { name: 'heading', type: 'text', required: true },
-            { name: 'subheading', type: 'text' },
-            { name: 'backgroundImage', type: 'upload', relationTo: 'media' },
-            { name: 'ctaText', type: 'text' },
-            { name: 'ctaLink', type: 'text' },
-          ],
-        },
-        {
-          slug: 'contentSection',
-          fields: [
-            { name: 'heading', type: 'text' },
-            { name: 'content', type: 'richText' },
-          ],
-        },
-        {
-          slug: 'featuresGrid',
-          fields: [
-            {
-              name: 'features',
-              type: 'array',
-              fields: [
-                { name: 'title', type: 'text' },
-                { name: 'description', type: 'textarea' },
-                { name: 'icon', type: 'upload', relationTo: 'media' },
-              ],
-            },
-          ],
-        },
-      ],
+      blocks: AboutBlocks,
+    },
+    // Digital Content Page Blocks
+    {
+      name: 'digitalContentBlocks',
+      type: 'blocks',
+      admin: {
+        condition: (data) => data.pageType === 'digitalContent',
+        description: 'Blocks for Digital Content page layout',
+      },
+      blocks: DigitalContentBlocks,
     },
   ],
 }
