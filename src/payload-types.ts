@@ -94,8 +94,14 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    header: Header;
+    footer: Footer;
+  };
+  globalsSelect: {
+    header: HeaderSelect<false> | HeaderSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -862,6 +868,146 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header".
+ */
+export interface Header {
+  id: number;
+  logo: number | Media;
+  navigation?:
+    | {
+        label: string;
+        /**
+         * Enter relative path (e.g., /about) or full URL
+         */
+        url: string;
+        openInNewTab?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButton?: {
+    text?: string | null;
+    url?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  /**
+   * Hex color code for footer background (e.g., #1f2937)
+   */
+  backgroundColor?: string | null;
+  /**
+   * Hex color code for all text in footer (e.g., #9ca3af)
+   */
+  textColor?: string | null;
+  /**
+   * Hex color code for social media icons (e.g., #9ca3af)
+   */
+  iconColor?: string | null;
+  logo?: (number | null) | Media;
+  description?: string | null;
+  /**
+   * Optional image to display between left and right sections
+   */
+  centerImage?: (number | null) | Media;
+  columns?:
+    | {
+        heading: string;
+        links?:
+          | {
+              label: string;
+              url: string;
+              openInNewTab?: boolean | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  socialLinks?:
+    | {
+        platform: 'facebook' | 'twitter' | 'linkedin' | 'instagram' | 'youtube';
+        url: string;
+        /**
+         * Upload a custom icon for this social link (overrides default icon).
+         */
+        icon?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  copyrightText?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header_select".
+ */
+export interface HeaderSelect<T extends boolean = true> {
+  logo?: T;
+  navigation?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        openInNewTab?: T;
+        id?: T;
+      };
+  ctaButton?:
+    | T
+    | {
+        text?: T;
+        url?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  backgroundColor?: T;
+  textColor?: T;
+  iconColor?: T;
+  logo?: T;
+  description?: T;
+  centerImage?: T;
+  columns?:
+    | T
+    | {
+        heading?: T;
+        links?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              openInNewTab?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  socialLinks?:
+    | T
+    | {
+        platform?: T;
+        url?: T;
+        icon?: T;
+        id?: T;
+      };
+  copyrightText?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

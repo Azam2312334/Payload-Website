@@ -12,6 +12,8 @@ import { Media } from './collections/Media'
 import { Cars } from './collections/Cars'
 import { Manufacturers } from './collections/Manufacturers'
 import { Pages } from './collections/Pages'
+import { Header } from './collections/globals/Header'
+import { Footer } from './collections/globals/Footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -24,6 +26,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Cars, Manufacturers, Pages],
+  globals: [Header, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
