@@ -115,6 +115,18 @@ export default async function DigitalContentPage() {
                     />
                   )
                 )}
+                {/* Dark overlay for better text readability */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'rgba(0, 0, 0, 0.4)',
+                    zIndex: 0,
+                  }}
+                />
                 <div
                   style={{
                     maxWidth: '1200px',
@@ -251,10 +263,24 @@ export default async function DigitalContentPage() {
                     style={{ objectFit: 'cover', zIndex: -1 }}
                   />
                 )}
+                {/* Dark overlay for better text readability */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'rgba(0, 0, 0, 0.4)',
+                    zIndex: 0,
+                  }}
+                />
                 <div
                   style={{
                     width: '100%',
                     padding: '80px 20px',
+                    position: 'relative',
+                    zIndex: 1,
                   }}
                 >
                   <div
@@ -262,7 +288,6 @@ export default async function DigitalContentPage() {
                       maxWidth: '1200px',
                       margin: '0 auto',
                       position: 'relative',
-                      zIndex: 1,
                     }}
                   >
                     <div style={{ maxWidth: '50%' }}>

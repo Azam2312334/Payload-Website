@@ -57,7 +57,8 @@ export const DigitalContentHero: Block = {
       type: 'text',
       label: 'YouTube Video ID',
       admin: {
-        description: 'Enter the YouTube video ID (e.g., ty2Uq2ip340 from https://www.youtube.com/watch?v=ty2Uq2ip340)',
+        description:
+          'Enter the YouTube video ID (e.g., ty2Uq2ip340 from https://www.youtube.com/watch?v=ty2Uq2ip340)',
         condition: (data, siblingData) => siblingData?.backgroundType === 'youtube',
       },
     },

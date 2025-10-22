@@ -306,7 +306,12 @@ export interface Page {
             bannerDescription: string;
             ctaText?: string | null;
             ctaLink?: string | null;
-            backgroundImage: number | Media;
+            backgroundType: 'image' | 'youtube';
+            backgroundImage?: (number | null) | Media;
+            /**
+             * Enter the YouTube video ID (e.g., ty2Uq2ip340 from https://www.youtube.com/watch?v=ty2Uq2ip340)
+             */
+            youtubeVideoId?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'digitalContentHero';
@@ -684,7 +689,9 @@ export interface PagesSelect<T extends boolean = true> {
               bannerDescription?: T;
               ctaText?: T;
               ctaLink?: T;
+              backgroundType?: T;
               backgroundImage?: T;
+              youtubeVideoId?: T;
               id?: T;
               blockName?: T;
             };
