@@ -24,19 +24,23 @@ function extractTextFromLexical(content: any): string {
 export default async function AboutPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-
-  const result = await payload.find({
-    collection: 'pages',
-    where: {
-      pageType: {
-        equals: 'about',
+  let result;
+  try {
+    result = await payload.find({
+      collection: 'pages',
+      where: {
+        pageType: {
+          equals: 'about',
+        },
       },
-    },
-    limit: 1,
-    depth: 2, // Important: This fetches the related media/icon data
-  })
+      limit: 1,
+      depth: 2, // Important: This fetches the related media/icon data
+    })
+  } catch (e) {
+    return <div>About page is not available (table missing)</div>;
+  }
 
-  if (result.docs.length === 0) {
+  if (!result || result.docs.length === 0) {
     return <div>About page not found</div>
   }
 

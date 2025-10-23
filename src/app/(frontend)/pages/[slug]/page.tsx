@@ -25,21 +25,26 @@ export default async function PageDetail({ params }: { params: Promise<{ slug: s
   const { slug } = await params
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-
-  const result = await payload.find({
-    collection: 'pages',
-    where: {
-      slug: {
-        equals: slug,
+  let result
+  try {
+    result = await payload.find({
+      collection: 'pages',
+      where: {
+        slug: {
+          equals: slug,
+        },
+        pageType: {
+          equals: 'standard', // Only get standard slug-based pages
+        },
       },
-      pageType: {
-        equals: 'standard', // Only get standard slug-based pages
-      },
-    },
-    limit: 1,
-  })
+      limit: 1,
+    })
+  } catch (e: any) {
+    // If the table does not exist, treat as not found
+    return notFound()
+  }
 
-  if (result.docs.length === 0) {
+  if (!result || result.docs.length === 0) {
     notFound()
   }
 
@@ -62,16 +67,21 @@ export default async function PageDetail({ params }: { params: Promise<{ slug: s
 export async function generateStaticParams() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-
-  const pages = await payload.find({
-    collection: 'pages',
-    where: {
-      pageType: {
-        equals: 'standard',
+  let pages
+  try {
+    pages = await payload.find({
+      collection: 'pages',
+      where: {
+        pageType: {
+          equals: 'standard',
+        },
       },
-    },
-    limit: 100,
-  })
+      limit: 100,
+    })
+  } catch (e: any) {
+    // If the table does not exist, return empty params
+    return []
+  }
 
   return pages.docs.map((page) => ({
     slug: page.slug,

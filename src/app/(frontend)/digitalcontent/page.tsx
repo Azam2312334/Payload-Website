@@ -25,32 +25,28 @@ function extractTextFromLexical(content: any): string {
 export default async function DigitalContentPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-
-  const result = await payload.find({
-    collection: 'pages',
-    where: {
-      pageType: {
-        equals: 'digitalContent',
+  let result;
+  try {
+    result = await payload.find({
+      collection: 'pages',
+      where: {
+        pageType: {
+          equals: 'digitalContent',
+        },
       },
-    },
-    limit: 1,
-    depth: 2,
-  })
-
-  // Debug logging
-  console.log('=== Digital Content Page Debug ===')
-  console.log('Found pages:', result.docs.length)
-  if (result.docs.length > 0) {
-    console.log('Page title:', result.docs[0].title)
-    console.log('Page blocks:', result.docs[0].digitalContentBlocks?.length || 0)
-    console.log(
-      'Block types:',
-      result.docs[0].digitalContentBlocks?.map((b: any) => b.blockType),
-    )
+      limit: 1,
+      depth: 2,
+    })
+  } catch (e) {
+    return (
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+        <h1>Digital Content page is not available (table missing)</h1>
+        <p>Please create the table/collection and a Digital Content page in the Payload admin panel.</p>
+      </div>
+    );
   }
-  console.log('================================')
 
-  if (result.docs.length === 0) {
+  if (!result || result.docs.length === 0) {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
         <h1>Digital Content page not found</h1>
