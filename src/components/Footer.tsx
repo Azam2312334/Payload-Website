@@ -2,43 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Globe } from 'lucide-react'
+import type { Footer as FooterType, Media } from '@/payload-types'
 
 interface FooterProps {
-  data: {
-    backgroundColor?: string
-    textColor?: string
-    iconColor?: string
-    logo?: {
-      url?: string
-      alt?: string
-    }
-    description?: string
-    centerImage?: {
-      url?: string
-      alt?: string
-      width?: number
-      height?: number
-    }
-    columns?: Array<{
-      heading: string
-      links?: Array<{
-        label: string
-        url: string
-        openInNewTab?: boolean
-      }>
-    }>
-    socialLinks?: Array<{
-      platform: string
-      url: string
-      icon?: {
-        url: string
-        alt?: string
-        width?: number
-        height?: number
-      }
-    }>
-    copyrightText?: string
-  }
+  data: FooterType
 }
 
 export function Footer({ data }: FooterProps) {
@@ -71,15 +38,15 @@ export function Footer({ data }: FooterProps) {
         >
           {/* Company Info - Left Side */}
           <div style={{ maxWidth: '400px' }}>
-            {data.logo && typeof data.logo === 'object' && data.logo.url && (
+            {data.logo && typeof data.logo === 'object' && (data.logo as Media).url ? (
               <Image
-                src={data.logo.url}
-                alt={data.logo.alt || 'Footer Logo'}
+                src={(data.logo as Media).url || ''}
+                alt={(data.logo as Media).alt || 'Footer Logo'}
                 width={120}
                 height={40}
                 style={{ marginBottom: '16px', objectFit: 'contain' }}
               />
-            )}
+            ) : null}
             {data.description && (
               <p style={{ color: textColor, lineHeight: '1.6', marginTop: '16px' }}>
                 {data.description}
@@ -88,7 +55,7 @@ export function Footer({ data }: FooterProps) {
           </div>
 
           {/* Center Image */}
-          {data.centerImage && typeof data.centerImage === 'object' && data.centerImage.url && (
+          {data.centerImage && typeof data.centerImage === 'object' && (data.centerImage as Media).url ? (
             <div
               style={{
                 display: 'flex',
@@ -99,19 +66,19 @@ export function Footer({ data }: FooterProps) {
               }}
             >
               <Image
-                src={data.centerImage.url}
-                alt={data.centerImage.alt || 'Center Image'}
+                src={(data.centerImage as Media).url || ''}
+                alt={(data.centerImage as Media).alt || 'Center Image'}
                 width={100}
                 height={100}
                 style={{ objectFit: 'contain', maxWidth: '100%' }}
               />
-              {data.centerImage.alt && (
+              {(data.centerImage as Media).alt && (
                 <p style={{ color: textColor, fontSize: '14px', margin: 0, textAlign: 'center' }}>
-                  {data.centerImage.alt}
+                  {(data.centerImage as Media).alt}
                 </p>
               )}
             </div>
-          )}
+          ) : null}
 
           {/* Right Side - Social Links, Footer Links, and Copyright */}
           <div
@@ -161,12 +128,12 @@ export function Footer({ data }: FooterProps) {
                       }}
                       title={social.platform}
                     >
-                      {social.icon && social.icon.url ? (
+                      {social.icon && typeof social.icon === 'object' && (social.icon as Media).url ? (
                         <Image
-                          src={social.icon.url}
-                          alt={social.icon.alt || social.platform}
-                          width={social.icon.width || 20}
-                          height={social.icon.height || 20}
+                          src={(social.icon as Media).url || ''}
+                          alt={(social.icon as Media).alt || social.platform}
+                          width={20}
+                          height={20}
                           style={{ objectFit: 'contain', display: 'block' }}
                         />
                       ) : (

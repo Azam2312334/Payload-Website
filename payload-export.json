@@ -1,0 +1,1217 @@
+{
+  "users": {
+    "docs": [
+      {
+        "id": 1,
+        "updatedAt": "2025-10-23T04:29:21.172Z",
+        "createdAt": "2025-10-15T01:16:15.680Z",
+        "email": "ariefnurazams@gmail.com",
+        "sessions": [
+          {
+            "id": "e04adc58-6dbd-41fb-b8a9-24280deb9aad",
+            "createdAt": "2025-10-23T02:59:04.467Z",
+            "expiresAt": "2025-10-23T04:59:04.467Z"
+          },
+          {
+            "id": "0295ce7f-b781-4e37-a201-56fe208ec8c0",
+            "createdAt": "2025-10-23T04:29:21.172Z",
+            "expiresAt": "2025-10-23T06:29:21.172Z"
+          }
+        ]
+      }
+    ],
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "limit": 10000,
+    "nextPage": null,
+    "page": 1,
+    "pagingCounter": 1,
+    "prevPage": null,
+    "totalDocs": 1,
+    "totalPages": 1
+  },
+  "media": {
+    "docs": [
+      {
+        "id": 19,
+        "alt": "linkedin",
+        "updatedAt": "2025-10-22T07:36:33.119Z",
+        "createdAt": "2025-10-22T07:36:33.118Z",
+        "url": "/api/media/file/linkedin.svg",
+        "thumbnailURL": null,
+        "filename": "linkedin.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 630,
+        "width": 24,
+        "height": 24,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 18,
+        "alt": "x",
+        "updatedAt": "2025-10-22T07:36:11.821Z",
+        "createdAt": "2025-10-22T07:36:11.821Z",
+        "url": "/api/media/file/twitter.svg",
+        "thumbnailURL": null,
+        "filename": "twitter.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 622,
+        "width": 24,
+        "height": 24,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 17,
+        "alt": "ig",
+        "updatedAt": "2025-10-22T07:35:56.717Z",
+        "createdAt": "2025-10-22T07:35:56.717Z",
+        "url": "/api/media/file/instagram.svg",
+        "thumbnailURL": null,
+        "filename": "instagram.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 1828,
+        "width": 24,
+        "height": 24,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 16,
+        "alt": "yt",
+        "updatedAt": "2025-10-22T07:35:23.141Z",
+        "createdAt": "2025-10-22T07:35:23.140Z",
+        "url": "/api/media/file/youtube.svg",
+        "thumbnailURL": null,
+        "filename": "youtube.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 479,
+        "width": 24,
+        "height": 24,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 15,
+        "alt": "fb",
+        "updatedAt": "2025-10-22T07:34:35.051Z",
+        "createdAt": "2025-10-22T07:34:35.051Z",
+        "url": "/api/media/file/facebook.svg",
+        "thumbnailURL": null,
+        "filename": "facebook.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 418,
+        "width": 24,
+        "height": 24,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 14,
+        "alt": "Ministry of Digital",
+        "updatedAt": "2025-10-22T06:45:17.433Z",
+        "createdAt": "2025-10-22T06:45:17.433Z",
+        "url": "/api/media/file/kkd-1.png",
+        "thumbnailURL": "/api/media/file/kkd-1-300x300.png",
+        "filename": "kkd-1.png",
+        "mimeType": "image/png",
+        "filesize": 63061,
+        "width": 320,
+        "height": 254,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/kkd-1-300x300.png",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/png",
+            "filesize": 92223,
+            "filename": "kkd-1-300x300.png"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 13,
+        "alt": "mdec-white",
+        "updatedAt": "2025-10-22T06:43:59.246Z",
+        "createdAt": "2025-10-22T06:43:59.246Z",
+        "url": "/api/media/file/mdec-white-1.png",
+        "thumbnailURL": "/api/media/file/mdec-white-1-300x300.png",
+        "filename": "mdec-white-1.png",
+        "mimeType": "image/png",
+        "filesize": 24521,
+        "width": 1920,
+        "height": 399,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/mdec-white-1-300x300.png",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/png",
+            "filesize": 9852,
+            "filename": "mdec-white-1-300x300.png"
+          },
+          "banner": {
+            "url": "/api/media/file/mdec-white-1-1024x640.png",
+            "width": 1024,
+            "height": 640,
+            "mimeType": "image/png",
+            "filesize": 32605,
+            "filename": "mdec-white-1-1024x640.png"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "alt": "mdecLogoHeader",
+        "updatedAt": "2025-10-22T06:36:21.814Z",
+        "createdAt": "2025-10-22T06:36:21.814Z",
+        "url": "/api/media/file/mdec-logo-1.png",
+        "thumbnailURL": "/api/media/file/mdec-logo-1-300x300.png",
+        "filename": "mdec-logo-1.png",
+        "mimeType": "image/png",
+        "filesize": 25247,
+        "width": 1920,
+        "height": 399,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/mdec-logo-1-300x300.png",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/png",
+            "filesize": 14233,
+            "filename": "mdec-logo-1-300x300.png"
+          },
+          "banner": {
+            "url": "/api/media/file/mdec-logo-1-1024x640.png",
+            "width": 1024,
+            "height": 640,
+            "mimeType": "image/png",
+            "filesize": 52093,
+            "filename": "mdec-logo-1-1024x640.png"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "alt": "revenue",
+        "updatedAt": "2025-10-21T09:00:08.533Z",
+        "createdAt": "2025-10-21T09:00:08.533Z",
+        "url": "/api/media/file/revenue.webp",
+        "thumbnailURL": "/api/media/file/revenue-300x300.webp",
+        "filename": "revenue.webp",
+        "mimeType": "image/webp",
+        "filesize": 31194,
+        "width": 500,
+        "height": 570,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/revenue-300x300.webp",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/webp",
+            "filesize": 17840,
+            "filename": "revenue-300x300.webp"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 10,
+        "alt": "jobs-created",
+        "updatedAt": "2025-10-21T09:00:08.020Z",
+        "createdAt": "2025-10-21T09:00:08.019Z",
+        "url": "/api/media/file/jobs-created.webp",
+        "thumbnailURL": "/api/media/file/jobs-created-300x300.webp",
+        "filename": "jobs-created.webp",
+        "mimeType": "image/webp",
+        "filesize": 15106,
+        "width": 500,
+        "height": 570,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/jobs-created-300x300.webp",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/webp",
+            "filesize": 10024,
+            "filename": "jobs-created-300x300.webp"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 9,
+        "alt": "investment",
+        "updatedAt": "2025-10-21T09:00:07.577Z",
+        "createdAt": "2025-10-21T09:00:07.577Z",
+        "url": "/api/media/file/investment.webp",
+        "thumbnailURL": "/api/media/file/investment-300x300.webp",
+        "filename": "investment.webp",
+        "mimeType": "image/webp",
+        "filesize": 27734,
+        "width": 500,
+        "height": 570,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/investment-300x300.webp",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/webp",
+            "filesize": 15590,
+            "filename": "investment-300x300.webp"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 8,
+        "alt": "export-sales",
+        "updatedAt": "2025-10-21T09:00:07.211Z",
+        "createdAt": "2025-10-21T09:00:07.210Z",
+        "url": "/api/media/file/export-sales.webp",
+        "thumbnailURL": "/api/media/file/export-sales-300x300.webp",
+        "filename": "export-sales.webp",
+        "mimeType": "image/webp",
+        "filesize": 21406,
+        "width": 500,
+        "height": 570,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/export-sales-300x300.webp",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/webp",
+            "filesize": 13016,
+            "filename": "export-sales-300x300.webp"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 7,
+        "alt": "global-champion",
+        "updatedAt": "2025-10-21T08:56:19.985Z",
+        "createdAt": "2025-10-21T08:56:19.985Z",
+        "url": "/api/media/file/global-champion.webp",
+        "thumbnailURL": "/api/media/file/global-champion-300x300.webp",
+        "filename": "global-champion.webp",
+        "mimeType": "image/webp",
+        "filesize": 116682,
+        "width": 3840,
+        "height": 720,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/global-champion-300x300.webp",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/webp",
+            "filesize": 8560,
+            "filename": "global-champion-300x300.webp"
+          },
+          "banner": {
+            "url": "/api/media/file/global-champion-1024x640.webp",
+            "width": 1024,
+            "height": 640,
+            "mimeType": "image/webp",
+            "filesize": 36472,
+            "filename": "global-champion-1024x640.webp"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "alt": "talent.png",
+        "updatedAt": "2025-10-21T08:46:43.108Z",
+        "createdAt": "2025-10-21T08:46:43.108Z",
+        "url": "/api/media/file/talent.png",
+        "thumbnailURL": null,
+        "filename": "talent.png",
+        "mimeType": "image/png",
+        "filesize": 12225,
+        "width": 160,
+        "height": 160,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 5,
+        "alt": "region-hub.png",
+        "updatedAt": "2025-10-21T08:46:42.867Z",
+        "createdAt": "2025-10-21T08:46:42.866Z",
+        "url": "/api/media/file/region-hub.png",
+        "thumbnailURL": null,
+        "filename": "region-hub.png",
+        "mimeType": "image/png",
+        "filesize": 14409,
+        "width": 160,
+        "height": 160,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 4,
+        "alt": "ip-commercialisation",
+        "updatedAt": "2025-10-21T08:46:42.499Z",
+        "createdAt": "2025-10-21T08:46:42.499Z",
+        "url": "/api/media/file/ip-commercialisation.png",
+        "thumbnailURL": null,
+        "filename": "ip-commercialisation.png",
+        "mimeType": "image/png",
+        "filesize": 11434,
+        "width": 160,
+        "height": 160,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 3,
+        "alt": "industry",
+        "updatedAt": "2025-10-21T08:46:42.302Z",
+        "createdAt": "2025-10-21T08:46:42.302Z",
+        "url": "/api/media/file/industry.png",
+        "thumbnailURL": null,
+        "filename": "industry.png",
+        "mimeType": "image/png",
+        "filesize": 8540,
+        "width": 160,
+        "height": 160,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 2,
+        "alt": "img",
+        "updatedAt": "2025-10-21T08:50:45.597Z",
+        "createdAt": "2025-10-15T02:51:07.405Z",
+        "url": "/api/media/file/industry-1.png",
+        "thumbnailURL": null,
+        "filename": "industry-1.png",
+        "mimeType": "image/png",
+        "filesize": 8540,
+        "width": 160,
+        "height": 160,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      {
+        "id": 1,
+        "alt": "bg",
+        "updatedAt": "2025-10-15T02:26:47.784Z",
+        "createdAt": "2025-10-15T01:55:53.266Z",
+        "url": "/api/media/file/bg.jpg",
+        "thumbnailURL": "/api/media/file/bg-300x300.jpg",
+        "filename": "bg.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 41268,
+        "width": 800,
+        "height": 394,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/bg-300x300.jpg",
+            "width": 300,
+            "height": 300,
+            "mimeType": "image/jpeg",
+            "filesize": 16028,
+            "filename": "bg-300x300.jpg"
+          },
+          "banner": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      }
+    ],
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "limit": 10000,
+    "nextPage": null,
+    "page": 1,
+    "pagingCounter": 1,
+    "prevPage": null,
+    "totalDocs": 19,
+    "totalPages": 1
+  },
+  "cars": {
+    "docs": [],
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "limit": 10000,
+    "nextPage": null,
+    "page": 1,
+    "pagingCounter": 1,
+    "prevPage": null,
+    "totalDocs": 0,
+    "totalPages": 1
+  },
+  "manufacturers": {
+    "docs": [],
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "limit": 10000,
+    "nextPage": null,
+    "page": 1,
+    "pagingCounter": 1,
+    "prevPage": null,
+    "totalDocs": 0,
+    "totalPages": 1
+  },
+  "pages": {
+    "docs": [
+      {
+        "id": 4,
+        "title": "MDEC - Digital Contents",
+        "slug": "mdec-digital-content",
+        "pageType": "digitalContent",
+        "content": null,
+        "digitalContentBlocks": [
+          {
+            "id": "68f0b5cf1a77e9ebfef62679",
+            "bannerText": "Pushing Malaysia's Digital Creators to New Heights",
+            "bannerDescription": "Shining the spotlight on creativity",
+            "ctaText": "OUR INITIATIVES",
+            "ctaLink": "link",
+            "backgroundType": "youtube",
+            "backgroundImage": {
+              "id": 1,
+              "alt": "bg",
+              "updatedAt": "2025-10-15T02:26:47.784Z",
+              "createdAt": "2025-10-15T01:55:53.266Z",
+              "url": "/api/media/file/bg.jpg",
+              "thumbnailURL": "/api/media/file/bg-300x300.jpg",
+              "filename": "bg.jpg",
+              "mimeType": "image/jpeg",
+              "filesize": 41268,
+              "width": 800,
+              "height": 394,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/bg-300x300.jpg",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/jpeg",
+                  "filesize": 16028,
+                  "filename": "bg-300x300.jpg"
+                },
+                "banner": {
+                  "url": null,
+                  "width": null,
+                  "height": null,
+                  "mimeType": null,
+                  "filesize": null,
+                  "filename": null
+                }
+              }
+            },
+            "youtubeVideoId": "https://www.youtube.com/embed/ty2Uq2ip340?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=ty2Uq2ip340&playsinline=1&disablekb=1&iv_load_policy=3&enablejsapi=1&origin=https%3A%2F%2Fmdec.my&widgetid=1&forigin=https%3A%2F%2Fmdec.my%2Fdigitalcontent&aoriginsup=1&vf=1",
+            "blockName": null,
+            "blockType": "digitalContentHero"
+          },
+          {
+            "id": "68f0bbeb86ff4c76dbb94f02",
+            "heading": "Our Focus Areas",
+            "blockName": null,
+            "areas": [
+              {
+                "id": "68f711b883646c4fe6edddec",
+                "title": "Talent",
+                "description": "Boosting capability through upskilling and enhance capacity by raising awareness and broadening access to the digital content industry",
+                "icon": {
+                  "id": 6,
+                  "alt": "talent.png",
+                  "updatedAt": "2025-10-21T08:46:43.108Z",
+                  "createdAt": "2025-10-21T08:46:43.108Z",
+                  "url": "/api/media/file/talent.png",
+                  "thumbnailURL": null,
+                  "filename": "talent.png",
+                  "mimeType": "image/png",
+                  "filesize": 12225,
+                  "width": 160,
+                  "height": 160,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                }
+              },
+              {
+                "id": "68f7231283646c4fe6edddee",
+                "title": "Industry",
+                "description": "Boosting industry growth by improving quality and global competitiveness of local digital content through funding and business support\n\n",
+                "icon": {
+                  "id": 3,
+                  "alt": "industry",
+                  "updatedAt": "2025-10-21T08:46:42.302Z",
+                  "createdAt": "2025-10-21T08:46:42.302Z",
+                  "url": "/api/media/file/industry.png",
+                  "thumbnailURL": null,
+                  "filename": "industry.png",
+                  "mimeType": "image/png",
+                  "filesize": 8540,
+                  "width": 160,
+                  "height": 160,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                }
+              },
+              {
+                "id": "68f723ab83646c4fe6edddf0",
+                "title": "IP Commercialisation",
+                "description": "Catalysing IP commercialisation to grow size and scope of local digital content companies via investment support\n\n",
+                "icon": {
+                  "id": 4,
+                  "alt": "ip-commercialisation",
+                  "updatedAt": "2025-10-21T08:46:42.499Z",
+                  "createdAt": "2025-10-21T08:46:42.499Z",
+                  "url": "/api/media/file/ip-commercialisation.png",
+                  "thumbnailURL": null,
+                  "filename": "ip-commercialisation.png",
+                  "mimeType": "image/png",
+                  "filesize": 11434,
+                  "width": 160,
+                  "height": 160,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                }
+              },
+              {
+                "id": "68f725a77ddb73596c03034b",
+                "title": "Regional Hub",
+                "description": "Positioning Malaysia as a regional hub for digital content by developing a cohesive structure of processes, incentives messaging",
+                "icon": {
+                  "id": 5,
+                  "alt": "region-hub.png",
+                  "updatedAt": "2025-10-21T08:46:42.867Z",
+                  "createdAt": "2025-10-21T08:46:42.866Z",
+                  "url": "/api/media/file/region-hub.png",
+                  "thumbnailURL": null,
+                  "filename": "region-hub.png",
+                  "mimeType": "image/png",
+                  "filesize": 14409,
+                  "width": 160,
+                  "height": 160,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                }
+              }
+            ],
+            "blockType": "focusArea"
+          },
+          {
+            "id": "68f0bc1686ff4c76dbb94f04",
+            "heading": "Malaysia is shaping global champions in Digital Content",
+            "description": "Malaysia's rapidly maturing digital creative industry, which includes animations, movies, and video games, is proving to be a significant growth driver for the nation.",
+            "image": {
+              "id": 7,
+              "alt": "global-champion",
+              "updatedAt": "2025-10-21T08:56:19.985Z",
+              "createdAt": "2025-10-21T08:56:19.985Z",
+              "url": "/api/media/file/global-champion.webp",
+              "thumbnailURL": "/api/media/file/global-champion-300x300.webp",
+              "filename": "global-champion.webp",
+              "mimeType": "image/webp",
+              "filesize": 116682,
+              "width": 3840,
+              "height": 720,
+              "focalX": 50,
+              "focalY": 50,
+              "sizes": {
+                "thumbnail": {
+                  "url": "/api/media/file/global-champion-300x300.webp",
+                  "width": 300,
+                  "height": 300,
+                  "mimeType": "image/webp",
+                  "filesize": 8560,
+                  "filename": "global-champion-300x300.webp"
+                },
+                "banner": {
+                  "url": "/api/media/file/global-champion-1024x640.webp",
+                  "width": 1024,
+                  "height": 640,
+                  "mimeType": "image/webp",
+                  "filesize": 36472,
+                  "filename": "global-champion-1024x640.webp"
+                }
+              }
+            },
+            "blockName": null,
+            "blockType": "globalChampion"
+          },
+          {
+            "id": "68f0bfcc86ff4c76dbb94f0a",
+            "heading": "National Impact",
+            "description": "Malaysia's digital content market has grown substantially over the years. Here are the end-of-the-year figures based on Malaysia Digital Industry Report (MDIR) for 2023.",
+            "blockName": null,
+            "stats": [
+              {
+                "id": "68f72aa67ddb73596c03034f",
+                "label": "In Revenue",
+                "value": "RM5.31 bil",
+                "icon": {
+                  "id": 11,
+                  "alt": "revenue",
+                  "updatedAt": "2025-10-21T09:00:08.533Z",
+                  "createdAt": "2025-10-21T09:00:08.533Z",
+                  "url": "/api/media/file/revenue.webp",
+                  "thumbnailURL": "/api/media/file/revenue-300x300.webp",
+                  "filename": "revenue.webp",
+                  "mimeType": "image/webp",
+                  "filesize": 31194,
+                  "width": 500,
+                  "height": 570,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": "/api/media/file/revenue-300x300.webp",
+                      "width": 300,
+                      "height": 300,
+                      "mimeType": "image/webp",
+                      "filesize": 17840,
+                      "filename": "revenue-300x300.webp"
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                },
+                "backgroundColor": "#6ed5fb",
+                "textColor": "black"
+              },
+              {
+                "id": "68f72eee7b38468b59ba513d",
+                "label": "In Export Sales",
+                "value": "RM0.84 bil",
+                "icon": {
+                  "id": 8,
+                  "alt": "export-sales",
+                  "updatedAt": "2025-10-21T09:00:07.211Z",
+                  "createdAt": "2025-10-21T09:00:07.210Z",
+                  "url": "/api/media/file/export-sales.webp",
+                  "thumbnailURL": "/api/media/file/export-sales-300x300.webp",
+                  "filename": "export-sales.webp",
+                  "mimeType": "image/webp",
+                  "filesize": 21406,
+                  "width": 500,
+                  "height": 570,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": "/api/media/file/export-sales-300x300.webp",
+                      "width": 300,
+                      "height": 300,
+                      "mimeType": "image/webp",
+                      "filesize": 13016,
+                      "filename": "export-sales-300x300.webp"
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                },
+                "backgroundColor": "#089a99",
+                "textColor": "white"
+              },
+              {
+                "id": "68f732c06a17454a6431ea74",
+                "label": "Jobs Created",
+                "value": "10,154",
+                "icon": {
+                  "id": 10,
+                  "alt": "jobs-created",
+                  "updatedAt": "2025-10-21T09:00:08.020Z",
+                  "createdAt": "2025-10-21T09:00:08.019Z",
+                  "url": "/api/media/file/jobs-created.webp",
+                  "thumbnailURL": "/api/media/file/jobs-created-300x300.webp",
+                  "filename": "jobs-created.webp",
+                  "mimeType": "image/webp",
+                  "filesize": 15106,
+                  "width": 500,
+                  "height": 570,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": "/api/media/file/jobs-created-300x300.webp",
+                      "width": 300,
+                      "height": 300,
+                      "mimeType": "image/webp",
+                      "filesize": 10024,
+                      "filename": "jobs-created-300x300.webp"
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                },
+                "backgroundColor": "#feed6e",
+                "textColor": "black"
+              },
+              {
+                "id": "68f733336a17454a6431ea76",
+                "label": "Investment",
+                "value": "RM887 mil",
+                "icon": {
+                  "id": 9,
+                  "alt": "investment",
+                  "updatedAt": "2025-10-21T09:00:07.577Z",
+                  "createdAt": "2025-10-21T09:00:07.577Z",
+                  "url": "/api/media/file/investment.webp",
+                  "thumbnailURL": "/api/media/file/investment-300x300.webp",
+                  "filename": "investment.webp",
+                  "mimeType": "image/webp",
+                  "filesize": 27734,
+                  "width": 500,
+                  "height": 570,
+                  "focalX": 50,
+                  "focalY": 50,
+                  "sizes": {
+                    "thumbnail": {
+                      "url": "/api/media/file/investment-300x300.webp",
+                      "width": 300,
+                      "height": 300,
+                      "mimeType": "image/webp",
+                      "filesize": 15590,
+                      "filename": "investment-300x300.webp"
+                    },
+                    "banner": {
+                      "url": null,
+                      "width": null,
+                      "height": null,
+                      "mimeType": null,
+                      "filesize": null,
+                      "filename": null
+                    }
+                  }
+                },
+                "backgroundColor": "#ff6e6e",
+                "textColor": "white"
+              }
+            ],
+            "blockType": "nationalImpact"
+          }
+        ],
+        "updatedAt": "2025-10-23T02:59:47.944Z",
+        "createdAt": "2025-10-16T08:52:02.712Z",
+        "aboutBlocks": []
+      },
+      {
+        "id": 3,
+        "title": "Standard Page",
+        "slug": "standard-page",
+        "pageType": "standard",
+        "content": {
+          "root": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "This is the content of the standard page",
+                    "type": "text",
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ],
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "type": "root",
+            "version": 1
+          }
+        },
+        "updatedAt": "2025-10-15T03:01:16.773Z",
+        "createdAt": "2025-10-15T03:01:16.772Z",
+        "aboutBlocks": [],
+        "digitalContentBlocks": []
+      },
+      {
+        "id": 2,
+        "title": "MDEC About us",
+        "slug": "mdec-about-us",
+        "pageType": "about",
+        "content": {
+          "root": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": "",
+                    "text": "this is the content for the mdec about us page",
+                    "type": "text",
+                    "version": 1
+                  }
+                ],
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ],
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "type": "root",
+            "version": 1
+          }
+        },
+        "updatedAt": "2025-10-15T02:51:17.799Z",
+        "createdAt": "2025-10-15T01:31:11.210Z",
+        "aboutBlocks": [],
+        "digitalContentBlocks": []
+      }
+    ],
+    "hasNextPage": false,
+    "hasPrevPage": false,
+    "limit": 10000,
+    "nextPage": null,
+    "page": 1,
+    "pagingCounter": 1,
+    "prevPage": null,
+    "totalDocs": 3,
+    "totalPages": 1
+  }
+}

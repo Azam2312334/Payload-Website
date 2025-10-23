@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -18,6 +19,8 @@ import { Footer } from './collections/globals/Footer'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const isProd = process.env.NODE_ENV === 'production' || process.env.DATABASE_TYPE === 'postgres'
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -32,11 +35,17 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || '',
-    },
-  }),
+  db: isProd
+    ? postgresAdapter({
+        pool: {
+          connectionString: process.env.DATABASE_URI || '',
+        },
+      })
+    : sqliteAdapter({
+        client: {
+          url: process.env.DATABASE_URI || '',
+        },
+      }),
   sharp,
   plugins: [
     payloadCloudPlugin(),

@@ -1,22 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Header as HeaderType, Media } from '@/payload-types'
 
 interface HeaderProps {
-  data: {
-    logo?: {
-      url?: string
-      alt?: string
-    }
-    navigation?: Array<{
-      label: string
-      url: string
-      openInNewTab?: boolean
-    }>
-    ctaButton?: {
-      text?: string
-      url?: string
-    }
-  }
+  data: HeaderType
 }
 
 export function Header({ data }: HeaderProps) {
@@ -46,15 +33,15 @@ export function Header({ data }: HeaderProps) {
       >
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          {data.logo && typeof data.logo === 'object' && data.logo.url && (
+          {data.logo && typeof data.logo === 'object' && (data.logo as Media).url ? (
             <Image
-              src={data.logo.url}
-              alt={data.logo.alt || 'Logo'}
+              src={(data.logo as Media).url || ''}
+              alt={(data.logo as Media).alt || 'Logo'}
               width={120}
               height={40}
               style={{ objectFit: 'contain' }}
             />
-          )}
+          ) : null}
         </Link>
 
         {/* Navigation */}
