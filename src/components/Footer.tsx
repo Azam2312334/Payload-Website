@@ -55,7 +55,9 @@ export function Footer({ data }: FooterProps) {
           </div>
 
           {/* Center Image */}
-          {data.centerImage && typeof data.centerImage === 'object' && (data.centerImage as Media).url ? (
+          {data.centerImage &&
+          typeof data.centerImage === 'object' &&
+          (data.centerImage as Media).url ? (
             <div
               style={{
                 display: 'flex',
@@ -128,7 +130,9 @@ export function Footer({ data }: FooterProps) {
                       }}
                       title={social.platform}
                     >
-                      {social.icon && typeof social.icon === 'object' && (social.icon as Media).url ? (
+                      {social.icon &&
+                      typeof social.icon === 'object' &&
+                      (social.icon as Media).url ? (
                         <Image
                           src={(social.icon as Media).url || ''}
                           alt={(social.icon as Media).alt || social.platform}

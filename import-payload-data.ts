@@ -1,16 +1,21 @@
-// import-payload-data.js
-// Run this script with: node import-payload-data.js
-// Imports all Payload collections from payload-export.json
+// import-payload-data.ts
+// Run with: npx tsx import-payload-data.ts
+// Imports all Payload collections from payload-export.json (ESM/TypeScript compatible)
 
-const payload = require('payload')
-const fs = require('fs')
+import { getPayload } from 'payload'
+import fs from 'fs'
+import path from 'path'
+import dotenv from 'dotenv'
 
-require('dotenv').config()
+dotenv.config()
 
 ;(async () => {
-  await payload.init({
-    secret: process.env.PAYLOAD_SECRET,
-    local: true,
+  // Dynamically import the ES module config
+  const configModule = await import('./src/payload.config')
+  const payloadConfig = configModule.default
+
+  const payload = await getPayload({
+    config: payloadConfig,
   })
 
   const data = JSON.parse(fs.readFileSync('payload-export.json', 'utf-8'))
@@ -25,8 +30,8 @@ require('dotenv').config()
       delete item.createdAt
       delete item.updatedAt
       try {
-        await payload.create({ collection, data: item })
-      } catch (e) {
+        await payload.create({ collection: collection as any, data: item })
+      } catch (e: any) {
         console.error(`Error importing to ${collection}:`, e.message)
       }
     }

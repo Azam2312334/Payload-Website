@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@payloadcms/db-postgres':
-        specifier: ^3.60.0
-        version: 3.60.0(@libsql/client@0.14.0)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))
+        specifier: 3.59.1
+        version: 3.59.1(@libsql/client@0.14.0)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))
       '@payloadcms/db-sqlite':
         specifier: 3.59.1
         version: 3.59.1(@types/pg@8.10.2)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))(pg@8.16.3)
@@ -1510,10 +1510,10 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@payloadcms/db-postgres@3.60.0':
-    resolution: {integrity: sha512-XUpKFod8L3xoe6jCFC7AJA+6m3htHatfwqkyKo9MPpt5i9TeYZ3/qLa8EViOHwYPld3l1CokUMBQ7LWxuKomGw==}
+  '@payloadcms/db-postgres@3.59.1':
+    resolution: {integrity: sha512-lTxItMJ8wDt9gQ19zFRV2XJBsuoMtQiEOtHNBxULu4SVdee0vdcuRFZmjQYB5tZ0VOUEp96sCx+aMUh7RwRmzw==}
     peerDependencies:
-      payload: 3.60.0
+      payload: 3.59.1
 
   '@payloadcms/db-sqlite@3.59.1':
     resolution: {integrity: sha512-Iptuley2k6rzrQ4lIgv1IgpIghVI/VDjvFo70uiDqbU3oE0RsmkJ9O/Oh7NNAAEAXavXOD7CfTIAwvadLHuSzA==}
@@ -1524,11 +1524,6 @@ packages:
     resolution: {integrity: sha512-2n25PQfbFJ7uIlQxLilf8lrdbIGJ9p56ZNtViHl57DCq8SYGcB7Rz+5MSNdGwMnK28oYMAObJ4bBI5JG9DhR/g==}
     peerDependencies:
       payload: 3.59.1
-
-  '@payloadcms/drizzle@3.60.0':
-    resolution: {integrity: sha512-6SPd+cWj+G5eIl/sOsImCcGW+UYUqOSw6mCAcnS9fyYVbaPib/VXze9E1/VkNP2Xn2WvZ+h+DGYqxbZlBEqxYQ==}
-    peerDependencies:
-      payload: 3.60.0
 
   '@payloadcms/email-nodemailer@3.59.1':
     resolution: {integrity: sha512-VhyHUANd8+/CmdEH+Zr9tnjg0Vlr5SyzeokPB4UYPD5in2xhyX3d3vtFmsdkfAx06Uixv96o7M/EiBs3pX5bJA==}
@@ -2740,104 +2735,8 @@ packages:
     resolution: {integrity: sha512-tCPWVZWZqWVx2XUsVpJRnH9Mx0ClVOf5YUHerZ5so1OKSlqww4zy1R5ksEdGRcO3tM3zj0PYN6V48TbQCL1RfA==}
     hasBin: true
 
-  drizzle-kit@0.31.5:
-    resolution: {integrity: sha512-+CHgPFzuoTQTt7cOYCV6MOw2w8vqEn/ap1yv4bpZOWL03u7rlVRQhUY0WYT3rHsgVTXwYQDZaSUJSQrMBUKuWg==}
-    hasBin: true
-
   drizzle-orm@0.44.2:
     resolution: {integrity: sha512-zGAqBzWWkVSFjZpwPOrmCrgO++1kZ5H/rZ4qTGeGOe18iXGVJWf3WPfHOVwFIbmi8kHjfJstC6rJomzGx8g/dQ==}
-    peerDependencies:
-      '@aws-sdk/client-rds-data': '>=3'
-      '@cloudflare/workers-types': '>=4'
-      '@electric-sql/pglite': '>=0.2.0'
-      '@libsql/client': '>=0.10.0'
-      '@libsql/client-wasm': '>=0.10.0'
-      '@neondatabase/serverless': '>=0.10.0'
-      '@op-engineering/op-sqlite': '>=2'
-      '@opentelemetry/api': ^1.4.1
-      '@planetscale/database': '>=1.13'
-      '@prisma/client': '*'
-      '@tidbcloud/serverless': '*'
-      '@types/better-sqlite3': '*'
-      '@types/pg': '*'
-      '@types/sql.js': '*'
-      '@upstash/redis': '>=1.34.7'
-      '@vercel/postgres': '>=0.8.0'
-      '@xata.io/client': '*'
-      better-sqlite3: '>=7'
-      bun-types: '*'
-      expo-sqlite: '>=14.0.0'
-      gel: '>=2'
-      knex: '*'
-      kysely: '*'
-      mysql2: '>=2'
-      pg: '>=8'
-      postgres: '>=3'
-      prisma: '*'
-      sql.js: '>=1'
-      sqlite3: '>=5'
-    peerDependenciesMeta:
-      '@aws-sdk/client-rds-data':
-        optional: true
-      '@cloudflare/workers-types':
-        optional: true
-      '@electric-sql/pglite':
-        optional: true
-      '@libsql/client':
-        optional: true
-      '@libsql/client-wasm':
-        optional: true
-      '@neondatabase/serverless':
-        optional: true
-      '@op-engineering/op-sqlite':
-        optional: true
-      '@opentelemetry/api':
-        optional: true
-      '@planetscale/database':
-        optional: true
-      '@prisma/client':
-        optional: true
-      '@tidbcloud/serverless':
-        optional: true
-      '@types/better-sqlite3':
-        optional: true
-      '@types/pg':
-        optional: true
-      '@types/sql.js':
-        optional: true
-      '@upstash/redis':
-        optional: true
-      '@vercel/postgres':
-        optional: true
-      '@xata.io/client':
-        optional: true
-      better-sqlite3:
-        optional: true
-      bun-types:
-        optional: true
-      expo-sqlite:
-        optional: true
-      gel:
-        optional: true
-      knex:
-        optional: true
-      kysely:
-        optional: true
-      mysql2:
-        optional: true
-      pg:
-        optional: true
-      postgres:
-        optional: true
-      prisma:
-        optional: true
-      sql.js:
-        optional: true
-      sqlite3:
-        optional: true
-
-  drizzle-orm@0.44.6:
-    resolution: {integrity: sha512-uy6uarrrEOc9K1u5/uhBFJbdF5VJ5xQ/Yzbecw3eAYOunv5FDeYkR2m8iitocdHBOHbvorviKOW5GVw0U1j4LQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -6700,13 +6599,13 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@payloadcms/db-postgres@3.60.0(@libsql/client@0.14.0)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))':
+  '@payloadcms/db-postgres@3.59.1(@libsql/client@0.14.0)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))':
     dependencies:
-      '@payloadcms/drizzle': 3.60.0(@libsql/client@0.14.0)(@types/pg@8.10.2)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))(pg@8.16.3)
+      '@payloadcms/drizzle': 3.59.1(@libsql/client@0.14.0)(@types/pg@8.10.2)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))(pg@8.16.3)
       '@types/pg': 8.10.2
       console-table-printer: 2.12.1
-      drizzle-kit: 0.31.5
-      drizzle-orm: 0.44.6(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3)
+      drizzle-kit: 0.31.4
+      drizzle-orm: 0.44.2(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3)
       payload: 3.59.1(graphql@16.11.0)(typescript@5.7.3)
       pg: 8.16.3
       prompts: 2.4.2
@@ -6792,46 +6691,6 @@ snapshots:
       console-table-printer: 2.12.1
       dequal: 2.0.3
       drizzle-orm: 0.44.2(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3)
-      payload: 3.59.1(graphql@16.11.0)(typescript@5.7.3)
-      prompts: 2.4.2
-      to-snake-case: 1.0.0
-      uuid: 9.0.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-rds-data'
-      - '@cloudflare/workers-types'
-      - '@electric-sql/pglite'
-      - '@libsql/client'
-      - '@libsql/client-wasm'
-      - '@neondatabase/serverless'
-      - '@op-engineering/op-sqlite'
-      - '@opentelemetry/api'
-      - '@planetscale/database'
-      - '@prisma/client'
-      - '@tidbcloud/serverless'
-      - '@types/better-sqlite3'
-      - '@types/pg'
-      - '@types/sql.js'
-      - '@upstash/redis'
-      - '@vercel/postgres'
-      - '@xata.io/client'
-      - better-sqlite3
-      - bun-types
-      - expo-sqlite
-      - gel
-      - knex
-      - kysely
-      - mysql2
-      - pg
-      - postgres
-      - prisma
-      - sql.js
-      - sqlite3
-
-  '@payloadcms/drizzle@3.60.0(@libsql/client@0.14.0)(@types/pg@8.10.2)(payload@3.59.1(graphql@16.11.0)(typescript@5.7.3))(pg@8.16.3)':
-    dependencies:
-      console-table-printer: 2.12.1
-      dequal: 2.0.3
-      drizzle-orm: 0.44.6(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3)
       payload: 3.59.1(graphql@16.11.0)(typescript@5.7.3)
       prompts: 2.4.2
       to-snake-case: 1.0.0
@@ -8311,22 +8170,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-kit@0.31.5:
-    dependencies:
-      '@drizzle-team/brocli': 0.10.2
-      '@esbuild-kit/esm-loader': 2.6.5
-      esbuild: 0.25.10
-      esbuild-register: 3.6.0(esbuild@0.25.10)
-    transitivePeerDependencies:
-      - supports-color
-
   drizzle-orm@0.44.2(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3):
-    optionalDependencies:
-      '@libsql/client': 0.14.0
-      '@types/pg': 8.10.2
-      pg: 8.16.3
-
-  drizzle-orm@0.44.6(@libsql/client@0.14.0)(@types/pg@8.10.2)(pg@8.16.3):
     optionalDependencies:
       '@libsql/client': 0.14.0
       '@types/pg': 8.10.2
