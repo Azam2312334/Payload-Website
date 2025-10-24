@@ -1,5 +1,13 @@
 // storage-adapter-import-placeholder
 import 'dotenv/config';
+// DEBUG: Log PAYLOAD_SECRET at config load time
+console.log('DEBUG PAYLOAD_SECRET:', process.env.PAYLOAD_SECRET);
+
+// Hardcode the secret for debugging if not set
+if (!process.env.PAYLOAD_SECRET) {
+  process.env.PAYLOAD_SECRET = 'HARDCODED_DEBUG_SECRET';
+  console.log('DEBUG: PAYLOAD_SECRET was missing, set to HARDCODED_DEBUG_SECRET');
+}
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
@@ -32,7 +40,7 @@ export default buildConfig({
   collections: [Users, Media, Cars, Manufacturers, Pages],
   globals: [Header, Footer],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
