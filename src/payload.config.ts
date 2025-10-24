@@ -1,4 +1,5 @@
 // storage-adapter-import-placeholder
+import 'dotenv/config';
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
