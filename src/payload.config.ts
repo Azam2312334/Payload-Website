@@ -1,13 +1,5 @@
 // storage-adapter-import-placeholder
 import 'dotenv/config';
-// DEBUG: Log PAYLOAD_SECRET at config load time
-console.log('DEBUG PAYLOAD_SECRET:', process.env.PAYLOAD_SECRET);
-
-// Hardcode the secret for debugging if not set
-if (!process.env.PAYLOAD_SECRET) {
-  process.env.PAYLOAD_SECRET = 'HARDCODED_DEBUG_SECRET';
-  console.log('DEBUG: PAYLOAD_SECRET was missing, set to HARDCODED_DEBUG_SECRET');
-}
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
@@ -28,7 +20,23 @@ import { Footer } from './collections/globals/Footer'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const isProd = process.env.NODE_ENV === 'production' || process.env.DATABASE_TYPE === 'postgres'
+// Determine database adapter selection safely during CI/build
+const databaseUri = process.env.DATABASE_URI || ''
+const isLocalDb = /(127\.0\.0\.1|localhost)/.test(databaseUri)
+const runningInBuildEnv = !!process.env.VERCEL || !!process.env.CI || !!process.env.GITHUB_ACTIONS
+
+// Default original behavior
+let isProd = process.env.NODE_ENV === 'production' || process.env.DATABASE_TYPE === 'postgres'
+
+// If we're running in a CI/build environment (Vercel, GitHub Actions, etc.)
+// and the DATABASE_URI points to localhost, avoid using Postgres during the build
+// because the build environment cannot reach a local DB (causes ECONNREFUSED).
+if (runningInBuildEnv && isLocalDb) {
+  // Log for visibility in build logs
+  // eslint-disable-next-line no-console
+  console.log('DEBUG: Detected build environment and local DATABASE_URI — using sqlite adapter for the build to avoid ECONNREFUSED')
+  isProd = false
+}
 
 export default buildConfig({
   admin: {
@@ -40,7 +48,7 @@ export default buildConfig({
   collections: [Users, Media, Cars, Manufacturers, Pages],
   globals: [Header, Footer],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET,
+  secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
