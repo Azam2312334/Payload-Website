@@ -24,7 +24,7 @@ function extractTextFromLexical(content: any): string {
 export default async function AboutPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-  let result;
+  let result
   try {
     result = await payload.find({
       collection: 'pages',
@@ -37,7 +37,7 @@ export default async function AboutPage() {
       depth: 2, // Important: This fetches the related media/icon data
     })
   } catch (e) {
-    return <div>About page is not available (table missing)</div>;
+    return <div>About page is not available (table missing)</div>
   }
 
   if (!result || result.docs.length === 0) {

@@ -1,3 +1,19 @@
+---
+
+## ☁️ Deployment Notes: Vercel & CI/CD
+
+**Recommended environment settings for Vercel/CI builds:**
+
+- If your `DATABASE_URI` points to `127.0.0.1` or `localhost`, the build will automatically use SQLite to avoid connection errors.
+- For production, set `DATABASE_URI` to a reachable Postgres instance (e.g., a managed cloud database).
+- Optionally, set `DATABASE_TYPE=sqlite` for build environments if you want to force SQLite for static export builds.
+- For runtime (production), ensure all secrets and DB URIs are set correctly in your Vercel/hosted environment variables.
+
+**Summary:**
+- Never use a local-only Postgres URI for cloud builds.
+- Use SQLite for builds if you don't need DB data at build time.
+- Use Postgres for production runtime with a real, reachable database.
+
 # Quick Start Guide - Digital Content Page
 
 ## ✨ What You Have Now

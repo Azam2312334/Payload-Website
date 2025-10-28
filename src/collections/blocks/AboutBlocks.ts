@@ -5,6 +5,14 @@ export const Hero: Block = {
   slug: 'hero',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
       required: true,
@@ -34,6 +42,14 @@ export const ContentSection: Block = {
   slug: 'contentSection',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
     },
@@ -48,6 +64,14 @@ export const ContentSection: Block = {
 export const FeaturesGrid: Block = {
   slug: 'featuresGrid',
   fields: [
+    {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
     {
       name: 'features',
       type: 'array',

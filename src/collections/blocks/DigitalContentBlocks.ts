@@ -5,6 +5,14 @@ export const DigitalContentHero: Block = {
   slug: 'digitalContentHero',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'bannerText',
       type: 'text',
       required: true,
@@ -70,6 +78,14 @@ export const FocusArea: Block = {
   slug: 'focusArea',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
       required: true,
@@ -104,6 +120,14 @@ export const GlobalChampion: Block = {
   slug: 'globalChampion',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
       required: true,
@@ -125,6 +149,14 @@ export const GlobalChampion: Block = {
 export const NationalImpact: Block = {
   slug: 'nationalImpact',
   fields: [
+    {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
     {
       name: 'heading',
       type: 'text',
@@ -190,6 +222,14 @@ export const IndustrySize: Block = {
   slug: 'industrySize',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
       required: true,
@@ -230,6 +270,14 @@ export const OurHighlights: Block = {
   slug: 'ourHighlights',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'heading',
       type: 'text',
       required: true,
@@ -268,6 +316,14 @@ export const OurHighlights: Block = {
 export const ProgrammesInitiatives: Block = {
   slug: 'programmesInitiatives',
   fields: [
+    {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
     {
       name: 'heading',
       type: 'text',
@@ -308,6 +364,14 @@ export const ProgrammesInitiatives: Block = {
 export const OurPublications: Block = {
   slug: 'ourPublications',
   fields: [
+    {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
     {
       name: 'heading',
       type: 'text',
@@ -360,6 +424,14 @@ export const GetInTouch: Block = {
   slug: 'getInTouch',
   fields: [
     {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,
@@ -393,6 +465,14 @@ export const GetInTouch: Block = {
 export const FAQ: Block = {
   slug: 'faq',
   fields: [
+    {
+      name: 'hideBlock',
+      type: 'checkbox',
+      label: 'Hide this block',
+      admin: {
+        description: 'If checked, this block will be hidden from the frontend display.',
+      },
+    },
     {
       name: 'heading',
       type: 'text',

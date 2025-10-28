@@ -11,62 +11,64 @@ import './styles.css'
 // Helper function to extract text from Lexical richText content
 function extractTextFromLexical(content: any): string {
   if (!content || !content.root || !content.root.children) {
-    return '';
+    return ''
   }
   const extractText = (node: any): string => {
     if (node.text) {
-      return node.text;
+      return node.text
     }
     if (node.children && Array.isArray(node.children)) {
-      return node.children.map(extractText).join(' ');
+      return node.children.map(extractText).join(' ')
     }
-    return '';
-  };
-  return content.root.children.map(extractText).join('\n');
+    return ''
+  }
+  return content.root.children.map(extractText).join('\n')
 }
 
 // Helper function to get the correct URL based on pageType
 function getPageUrl(page: any): string {
   switch (page.pageType) {
     case 'home':
-      return '/';
+      return '/'
     case 'about':
-      return '/about';
+      return '/about'
     case 'digitalContent':
-      return '/digitalcontent';
+      return '/digitalcontent'
     case 'standard':
     default:
-      return `/pages/${page.slug}`;
+      return `/pages/${page.slug}`
   }
 }
 
 export default async function HomePage() {
   try {
-  const payloadConfig = await config;
-  const payload = await getPayload({ config: payloadConfig });
-  // Static export: do not use headers or auth
-  const user = null;
+    const payloadConfig = await config
+    const payload = await getPayload({ config: payloadConfig })
+    // Static export: do not use headers or auth
+    const user = null
 
     // Fetch pages from the pages collection
-    let pagesData;
+    let pagesData
     try {
       pagesData = await payload.find({
         collection: 'pages',
         limit: 10,
-      });
+      })
     } catch (e) {
-      console.error('Error fetching pagesData:', e);
+      console.error('Error fetching pagesData:', e)
       return (
         <div className="home">
           <div className="content">
             <h1>Pages table is missing</h1>
-            <p>Please create the table/collection and at least one page in the Payload admin panel.</p>
+            <p>
+              Please create the table/collection and at least one page in the Payload admin panel.
+            </p>
           </div>
         </div>
-      );
+      )
     }
 
-    const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`;
+    const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
 
     try {
       return (
@@ -143,9 +145,9 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-      );
+      )
     } catch (jsxError) {
-      console.error('Error rendering homepage JSX:', jsxError);
+      console.error('Error rendering homepage JSX:', jsxError)
       return (
         <div className="home">
           <div className="content">
@@ -153,10 +155,10 @@ export default async function HomePage() {
             <p>{String(jsxError)}</p>
           </div>
         </div>
-      );
+      )
     }
   } catch (err) {
-    console.error('Error in HomePage:', err);
+    console.error('Error in HomePage:', err)
     return (
       <div className="home">
         <div className="content">
@@ -164,6 +166,6 @@ export default async function HomePage() {
           <p>{String(err)}</p>
         </div>
       </div>
-    );
+    )
   }
 }

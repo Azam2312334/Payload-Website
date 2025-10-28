@@ -1,5 +1,5 @@
 // storage-adapter-import-placeholder
-import 'dotenv/config';
+import 'dotenv/config'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
@@ -34,7 +34,9 @@ let isProd = process.env.NODE_ENV === 'production' || process.env.DATABASE_TYPE 
 if (runningInBuildEnv && isLocalDb) {
   // Log for visibility in build logs
   // eslint-disable-next-line no-console
-  console.log('DEBUG: Detected build environment and local DATABASE_URI — using sqlite adapter for the build to avoid ECONNREFUSED')
+  console.log(
+    'DEBUG: Detected build environment and local DATABASE_URI — using sqlite adapter for the build to avoid ECONNREFUSED',
+  )
   isProd = false
 }
 

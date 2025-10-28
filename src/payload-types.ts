@@ -257,6 +257,10 @@ export interface Page {
   aboutBlocks?:
     | (
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             subheading?: string | null;
             backgroundImage?: (number | null) | Media;
@@ -267,6 +271,10 @@ export interface Page {
             blockType: 'hero';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading?: string | null;
             content?: {
               root: {
@@ -288,6 +296,10 @@ export interface Page {
             blockType: 'contentSection';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             features?:
               | {
                   title?: string | null;
@@ -308,6 +320,10 @@ export interface Page {
   digitalContentBlocks?:
     | (
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             bannerText: string;
             bannerDescription: string;
             ctaText?: string | null;
@@ -323,6 +339,10 @@ export interface Page {
             blockType: 'digitalContentHero';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             areas?:
               | {
@@ -337,6 +357,10 @@ export interface Page {
             blockType: 'focusArea';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             description: string;
             image?: (number | null) | Media;
@@ -345,6 +369,10 @@ export interface Page {
             blockType: 'globalChampion';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             description: string;
             stats?:
@@ -365,6 +393,10 @@ export interface Page {
             blockType: 'nationalImpact';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             description?: string | null;
             companies?:
@@ -380,6 +412,10 @@ export interface Page {
             blockType: 'industrySize';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             cards?:
               | {
@@ -395,6 +431,10 @@ export interface Page {
             blockType: 'ourHighlights';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             items?:
               | {
@@ -410,6 +450,10 @@ export interface Page {
             blockType: 'programmesInitiatives';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             downloadLabel?: string | null;
             items?:
@@ -429,6 +473,10 @@ export interface Page {
             blockType: 'ourPublications';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             title: string;
             description: {
               root: {
@@ -453,6 +501,10 @@ export interface Page {
             blockType: 'getInTouch';
           }
         | {
+            /**
+             * If checked, this block will be hidden from the frontend display.
+             */
+            hideBlock?: boolean | null;
             heading: string;
             questions?:
               | {
@@ -654,6 +706,7 @@ export interface PagesSelect<T extends boolean = true> {
         hero?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               subheading?: T;
               backgroundImage?: T;
@@ -665,6 +718,7 @@ export interface PagesSelect<T extends boolean = true> {
         contentSection?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               content?: T;
               id?: T;
@@ -673,6 +727,7 @@ export interface PagesSelect<T extends boolean = true> {
         featuresGrid?:
           | T
           | {
+              hideBlock?: T;
               features?:
                 | T
                 | {
@@ -691,6 +746,7 @@ export interface PagesSelect<T extends boolean = true> {
         digitalContentHero?:
           | T
           | {
+              hideBlock?: T;
               bannerText?: T;
               bannerDescription?: T;
               ctaText?: T;
@@ -704,6 +760,7 @@ export interface PagesSelect<T extends boolean = true> {
         focusArea?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               areas?:
                 | T
@@ -719,6 +776,7 @@ export interface PagesSelect<T extends boolean = true> {
         globalChampion?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               description?: T;
               image?: T;
@@ -728,6 +786,7 @@ export interface PagesSelect<T extends boolean = true> {
         nationalImpact?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               description?: T;
               stats?:
@@ -746,6 +805,7 @@ export interface PagesSelect<T extends boolean = true> {
         industrySize?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               description?: T;
               companies?:
@@ -762,6 +822,7 @@ export interface PagesSelect<T extends boolean = true> {
         ourHighlights?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               cards?:
                 | T
@@ -778,6 +839,7 @@ export interface PagesSelect<T extends boolean = true> {
         programmesInitiatives?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               items?:
                 | T
@@ -794,6 +856,7 @@ export interface PagesSelect<T extends boolean = true> {
         ourPublications?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               downloadLabel?: T;
               items?:
@@ -811,6 +874,7 @@ export interface PagesSelect<T extends boolean = true> {
         getInTouch?:
           | T
           | {
+              hideBlock?: T;
               title?: T;
               description?: T;
               ctaText?: T;
@@ -822,6 +886,7 @@ export interface PagesSelect<T extends boolean = true> {
         faq?:
           | T
           | {
+              hideBlock?: T;
               heading?: T;
               questions?:
                 | T
