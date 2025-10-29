@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Header as HeaderType, Media } from '@/payload-types'

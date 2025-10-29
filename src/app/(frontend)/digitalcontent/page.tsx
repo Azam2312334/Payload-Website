@@ -59,6 +59,25 @@ export default async function DigitalContentPage() {
 
   const page = result.docs[0]
 
+  // --- Go Live logic: return 404 if not live yet ---
+  const now = new Date()
+  if (page.goLiveAt) {
+    let goLiveDateTime: Date
+    if (page.goLiveTime) {
+      const dateStr = page.goLiveAt.slice(0, 10)
+      const timeStr = page.goLiveTime.length === 5 ? page.goLiveTime : '00:00'
+      goLiveDateTime = new Date(`${dateStr}T${timeStr}:00`)
+    } else {
+      goLiveDateTime = new Date(page.goLiveAt.slice(0, 10) + 'T00:00:00')
+    }
+    if (now < goLiveDateTime) {
+      // Not live yet
+      // Use Next.js notFound for consistency
+      const { notFound } = await import('next/navigation')
+      return notFound()
+    }
+  }
+
   return (
     <div style={{ width: '100%' }}>
       <h1 style={{ display: 'none' }}>{page.title}</h1>

@@ -50,6 +50,47 @@ export default async function PageDetail({ params }: { params: Promise<{ slug: s
 
   const page = result.docs[0]
 
+  // --- DEBUG: Output go-live values to help troubleshoot 404 logic ---
+  console.log('[GoLive Debug]', {
+    goLiveAt: page.goLiveAt,
+    goLiveTime: page.goLiveTime,
+    now: new Date().toISOString(),
+  })
+  let goLiveDateTime: Date | undefined = undefined
+  if (page.goLiveAt) {
+    if (page.goLiveTime) {
+      const dateStr = page.goLiveAt.slice(0, 10)
+      const timeStr = page.goLiveTime.length === 5 ? page.goLiveTime : '00:00'
+      goLiveDateTime = new Date(`${dateStr}T${timeStr}:00`)
+    } else {
+      goLiveDateTime = new Date(page.goLiveAt.slice(0, 10) + 'T00:00:00')
+    }
+    console.log('[GoLive Debug] Computed goLiveDateTime:', goLiveDateTime.toISOString())
+    if (new Date() < goLiveDateTime) {
+      return notFound()
+    }
+  }
+
+  // --- Go Live logic: return 404 if not live yet ---
+  const now = new Date()
+  if (page.goLiveAt) {
+    // Combine date and time (if any)
+    let goLiveDateTime: Date
+    if (page.goLiveTime) {
+      // Format: 'YYYY-MM-DDTHH:mm:00' (seconds default to 0)
+      const dateStr = page.goLiveAt.slice(0, 10)
+      const timeStr = page.goLiveTime.length === 5 ? page.goLiveTime : '00:00'
+      goLiveDateTime = new Date(`${dateStr}T${timeStr}:00`)
+    } else {
+      // Only date: treat as midnight
+      goLiveDateTime = new Date(page.goLiveAt.slice(0, 10) + 'T00:00:00')
+    }
+    if (now < goLiveDateTime) {
+      // Not live yet
+      return notFound()
+    }
+  }
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
       <h1>{page.title}</h1>

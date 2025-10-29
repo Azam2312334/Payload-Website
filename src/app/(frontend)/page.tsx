@@ -109,31 +109,51 @@ export default async function HomePage() {
             <div style={{ width: '100%', maxWidth: '800px', margin: '40px 0' }}>
               <h2 style={{ textAlign: 'center', marginBottom: '24px' }}>Pages</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                {pagesData.docs.map((page: any) => (
-                  <div
-                    key={page.id}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.05)',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      borderRadius: '8px',
-                      padding: '20px',
-                    }}
-                  >
-                    <h3 style={{ marginBottom: '12px' }}>
-                      <Link href={getPageUrl(page)}>{page.title}</Link>
-                    </h3>
+                {pagesData.docs
+                  .filter((page: any) => {
+                    if (!page.goLiveAt) return true
+                    const now = new Date()
+                    let goLive = new Date(page.goLiveAt)
+                    if (page.goLiveTime) {
+                      const [hours, minutes] = page.goLiveTime.split(':').map(Number)
+                      goLive.setHours(hours || 0, minutes || 0, 0, 0)
+                    } else {
+                      // If no time is set, default to midnight (00:00)
+                      goLive.setHours(0, 0, 0, 0)
+                    }
+                    return goLive <= now
+                  })
+                  .map((page: any) => (
+                    <div
+                      key={page.id}
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '8px',
+                        padding: '20px',
+                      }}
+                    >
+                      <h3 style={{ marginBottom: '12px' }}>
+                        <Link
+                          href={getPageUrl(page)}
+                          target={page.openInNewTab ? '_blank' : undefined}
+                          rel={page.openInNewTab ? 'noopener' : undefined}
+                        >
+                          {page.title}
+                        </Link>
+                      </h3>
 
-                    {page.content && (
-                      <div style={{ opacity: 0.8, fontSize: '14px', lineHeight: '1.6' }}>
-                        {extractTextFromLexical(page.content)}
-                      </div>
-                    )}
+                      {page.content && (
+                        <div style={{ opacity: 0.8, fontSize: '14px', lineHeight: '1.6' }}>
+                          {extractTextFromLexical(page.content)}
+                        </div>
+                      )}
 
-                    {!page.content && (
-                      <p style={{ opacity: 0.5, fontStyle: 'italic' }}>No content available</p>
-                    )}
-                  </div>
-                ))}
+                      {!page.content && (
+                        <p style={{ opacity: 0.5, fontStyle: 'italic' }}>No content available</p>
+                      )}
+                    </div>
+                  ))}
               </div>
             </div>
           )}

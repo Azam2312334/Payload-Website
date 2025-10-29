@@ -224,6 +224,18 @@ export interface Manufacturer {
  */
 export interface Page {
   id: number;
+  /**
+   * Set the date when this page should go live. If you want to specify a time, set the date first.
+   */
+  goLiveAt?: string | null;
+  /**
+   * Optional - Set the time (24-hour, e.g., 14:30) when this page should go live.
+   */
+  goLiveTime?: string | null;
+  /**
+   * If checked, links to this page should open in a new browser tab.
+   */
+  openInNewTab?: boolean | null;
   title: string;
   /**
    * URL-friendly version of the title
@@ -696,6 +708,9 @@ export interface ManufacturersSelect<T extends boolean = true> {
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
+  goLiveAt?: T;
+  goLiveTime?: T;
+  openInNewTab?: T;
   title?: T;
   slug?: T;
   pageType?: T;

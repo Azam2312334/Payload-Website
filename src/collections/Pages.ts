@@ -8,6 +8,35 @@ export const Pages: CollectionConfig = {
   },
   fields: [
     {
+      name: 'goLiveAt',
+      type: 'date',
+      label: 'Go Live Date',
+      admin: {
+        description:
+          'Set the date when this page should go live. If you want to specify a time, set the date first.',
+      },
+      required: false,
+    },
+    {
+      name: 'goLiveTime',
+      type: 'text',
+      label: 'Go Live Time (HH:mm)',
+      admin: {
+        description:
+          'Optional - Set the time (24-hour, e.g., 14:30) when this page should go live.',
+        condition: (data) => Boolean(data.goLiveAt),
+      },
+      required: false,
+    },
+    {
+      name: 'openInNewTab',
+      type: 'checkbox',
+      label: 'Open links to this page in a new tab',
+      admin: {
+        description: 'If checked, links to this page should open in a new browser tab.',
+      },
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,
