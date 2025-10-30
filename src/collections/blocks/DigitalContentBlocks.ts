@@ -4,6 +4,28 @@ import type { Block } from 'payload'
 export const DigitalContentHero: Block = {
   slug: 'digitalContentHero',
   fields: [
+    // Go Live fields
+    {
+      name: 'goLiveAt',
+      type: 'date',
+      label: 'Go Live Date',
+      admin: {
+        description:
+          'Set the date when this block should go live. If you want to specify a time, set the date first.',
+      },
+      required: false,
+    },
+    {
+      name: 'goLiveTime',
+      type: 'text',
+      label: 'Go Live Time (HH:mm)',
+      admin: {
+        description:
+          'Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.',
+        condition: (data) => Boolean(data.goLiveAt),
+      },
+      required: false,
+    },
     {
       name: 'hideBlock',
       type: 'checkbox',
@@ -13,21 +35,57 @@ export const DigitalContentHero: Block = {
       },
     },
     {
-      name: 'bannerText',
-      type: 'text',
-      required: true,
-      label: 'Banner Text',
+      type: 'row',
+      fields: [
+        {
+          name: 'bannerText',
+          type: 'text',
+          label: 'Banner Text (EN)',
+          required: true,
+          admin: { width: '50%' },
+        },
+        {
+          name: 'bannerText_bm',
+          type: 'text',
+          label: 'Banner Text (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
-      name: 'bannerDescription',
-      type: 'textarea',
-      required: true,
-      label: 'Banner Description',
+      type: 'row',
+      fields: [
+        {
+          name: 'bannerDescription',
+          type: 'textarea',
+          label: 'Banner Description (EN)',
+          required: true,
+          admin: { width: '50%' },
+        },
+        {
+          name: 'bannerDescription_bm',
+          type: 'textarea',
+          label: 'Banner Description (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
-      name: 'ctaText',
-      type: 'text',
-      label: 'CTA Button Text',
+      type: 'row',
+      fields: [
+        {
+          name: 'ctaText',
+          type: 'text',
+          label: 'CTA Button Text (EN)',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'ctaText_bm',
+          type: 'text',
+          label: 'CTA Button Text (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'ctaLink',
@@ -77,6 +135,28 @@ export const DigitalContentHero: Block = {
 export const FocusArea: Block = {
   slug: 'focusArea',
   fields: [
+    // Go Live fields
+    {
+      name: 'goLiveAt',
+      type: 'date',
+      label: 'Go Live Date',
+      admin: {
+        description:
+          'Set the date when this block should go live. If you want to specify a time, set the date first.',
+      },
+      required: false,
+    },
+    {
+      name: 'goLiveTime',
+      type: 'text',
+      label: 'Go Live Time (HH:mm)',
+      admin: {
+        description:
+          'Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.',
+        condition: (data) => Boolean(data.goLiveAt),
+      },
+      required: false,
+    },
     {
       name: 'hideBlock',
       type: 'checkbox',
@@ -86,24 +166,64 @@ export const FocusArea: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Our Focus Areas',
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          defaultValue: 'Our Focus Areas',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          defaultValue: 'Bidang Tumpuan Kami',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'areas',
       type: 'array',
       fields: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              label: 'Title (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'title_bm',
+              type: 'text',
+              label: 'Title (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
-          name: 'description',
-          type: 'textarea',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'description_bm',
+              type: 'textarea',
+              label: 'Description (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'icon',

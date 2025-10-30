@@ -2,8 +2,10 @@ import React from 'react'
 import './styles.css'
 import { getPayload } from 'payload'
 import config from '@payload-config'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
@@ -55,9 +57,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Header data={headerData} />
-        <main style={{ paddingTop: '73px' }}>{children}</main>
-        <Footer data={footerData} />
+        <LanguageProvider>
+          <Header data={headerData} />
+          <main style={{ paddingTop: '73px' }}>{children}</main>
+          <Footer data={footerData} />
+        </LanguageProvider>
       </body>
     </html>
   )

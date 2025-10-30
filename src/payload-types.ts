@@ -270,6 +270,14 @@ export interface Page {
     | (
         | {
             /**
+             * Set the date when this block should go live. If you want to specify a time, set the date first.
+             */
+            goLiveAt?: string | null;
+            /**
+             * Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.
+             */
+            goLiveTime?: string | null;
+            /**
              * If checked, this block will be hidden from the frontend display.
              */
             hideBlock?: boolean | null;
@@ -283,6 +291,14 @@ export interface Page {
             blockType: 'hero';
           }
         | {
+            /**
+             * Set the date when this block should go live. If you want to specify a time, set the date first.
+             */
+            goLiveAt?: string | null;
+            /**
+             * Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.
+             */
+            goLiveTime?: string | null;
             /**
              * If checked, this block will be hidden from the frontend display.
              */
@@ -309,6 +325,14 @@ export interface Page {
           }
         | {
             /**
+             * Set the date when this block should go live. If you want to specify a time, set the date first.
+             */
+            goLiveAt?: string | null;
+            /**
+             * Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.
+             */
+            goLiveTime?: string | null;
+            /**
              * If checked, this block will be hidden from the frontend display.
              */
             hideBlock?: boolean | null;
@@ -333,12 +357,23 @@ export interface Page {
     | (
         | {
             /**
+             * Set the date when this block should go live. If you want to specify a time, set the date first.
+             */
+            goLiveAt?: string | null;
+            /**
+             * Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.
+             */
+            goLiveTime?: string | null;
+            /**
              * If checked, this block will be hidden from the frontend display.
              */
             hideBlock?: boolean | null;
             bannerText: string;
+            bannerText_bm?: string | null;
             bannerDescription: string;
+            bannerDescription_bm?: string | null;
             ctaText?: string | null;
+            ctaText_bm?: string | null;
             ctaLink?: string | null;
             backgroundType: 'image' | 'youtube';
             backgroundImage?: (number | null) | Media;
@@ -352,14 +387,25 @@ export interface Page {
           }
         | {
             /**
+             * Set the date when this block should go live. If you want to specify a time, set the date first.
+             */
+            goLiveAt?: string | null;
+            /**
+             * Optional - Set the time (24-hour, e.g., 14:30) when this block should go live.
+             */
+            goLiveTime?: string | null;
+            /**
              * If checked, this block will be hidden from the frontend display.
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             areas?:
               | {
                   title: string;
+                  title_bm?: string | null;
                   description: string;
+                  description_bm?: string | null;
                   icon?: (number | null) | Media;
                   id?: string | null;
                 }[]
@@ -721,6 +767,8 @@ export interface PagesSelect<T extends boolean = true> {
         hero?:
           | T
           | {
+              goLiveAt?: T;
+              goLiveTime?: T;
               hideBlock?: T;
               heading?: T;
               subheading?: T;
@@ -733,6 +781,8 @@ export interface PagesSelect<T extends boolean = true> {
         contentSection?:
           | T
           | {
+              goLiveAt?: T;
+              goLiveTime?: T;
               hideBlock?: T;
               heading?: T;
               content?: T;
@@ -742,6 +792,8 @@ export interface PagesSelect<T extends boolean = true> {
         featuresGrid?:
           | T
           | {
+              goLiveAt?: T;
+              goLiveTime?: T;
               hideBlock?: T;
               features?:
                 | T
@@ -761,10 +813,15 @@ export interface PagesSelect<T extends boolean = true> {
         digitalContentHero?:
           | T
           | {
+              goLiveAt?: T;
+              goLiveTime?: T;
               hideBlock?: T;
               bannerText?: T;
+              bannerText_bm?: T;
               bannerDescription?: T;
+              bannerDescription_bm?: T;
               ctaText?: T;
+              ctaText_bm?: T;
               ctaLink?: T;
               backgroundType?: T;
               backgroundImage?: T;
@@ -775,13 +832,18 @@ export interface PagesSelect<T extends boolean = true> {
         focusArea?:
           | T
           | {
+              goLiveAt?: T;
+              goLiveTime?: T;
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               areas?:
                 | T
                 | {
                     title?: T;
+                    title_bm?: T;
                     description?: T;
+                    description_bm?: T;
                     icon?: T;
                     id?: T;
                   };

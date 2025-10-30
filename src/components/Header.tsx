@@ -1,13 +1,18 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+
 import type { Header as HeaderType, Media } from '@/payload-types'
+
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface HeaderProps {
   data: HeaderType
 }
 
 export function Header({ data }: HeaderProps) {
+  const { lang, setLang } = useLanguage()
+
   return (
     <header
       style={{
@@ -73,42 +78,81 @@ export function Header({ data }: HeaderProps) {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        {data.ctaButton?.url && (
-          <Link
-            href={data.ctaButton.url}
-            style={{
-              padding: '10px',
-              background: 'white',
-              color: '#E62A32',
-              textDecoration: 'none',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-              transition: 'background-color 0.2s',
-              border: '1px solid #e5e7eb',
-            }}
-            title={data.ctaButton.text || 'Menu'}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          {/* CTA Button */}
+          {data.ctaButton?.url && (
+            <Link
+              href={data.ctaButton.url}
+              style={{
+                padding: '10px',
+                background: 'white',
+                color: '#E62A32',
+                textDecoration: 'none',
+                borderRadius: '6px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                transition: 'background-color 0.2s',
+                border: '1px solid #e5e7eb',
+              }}
+              title={data.ctaButton.text || 'Menu'}
             >
-              <g fill="none" fillRule="evenodd">
-                <path d="M0 0h24v24H0z"></path>
-                <g fill="#E62A32">
-                  <path d="M17 3h4v4h-4zM10 3h4v4h-4zM3 3h4v4H3zM17 10h4v4h-4zM10 10h4v4h-4zM3 10h4v4H3zM17 17h4v4h-4zM10 17h4v4h-4zM3 17h4v4H3z"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none" fillRule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <g fill="#E62A32">
+                    <path d="M17 3h4v4h-4zM10 3h4v4h-4zM3 3h4v4H3zM17 10h4v4h-4zM10 10h4v4h-4zM3 10h4v4H3zM17 17h4v4h-4zM10 17h4v4h-4zM3 17h4v4H3z"></path>
+                  </g>
                 </g>
-              </g>
-            </svg>
-          </Link>
-        )}
+              </svg>
+            </Link>
+          )}
+          {/* Language Switcher */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <button
+              onClick={() => setLang('en')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '4px 0 0 4px',
+                border: '1px solid #e5e7eb',
+                background: lang === 'en' ? '#E62A32' : 'white',
+                color: lang === 'en' ? 'white' : '#374151',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                outline: 'none',
+                borderRight: 'none',
+              }}
+              aria-pressed={lang === 'en'}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLang('bm')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '0 4px 4px 0',
+                border: '1px solid #e5e7eb',
+                background: lang === 'bm' ? '#E62A32' : 'white',
+                color: lang === 'bm' ? 'white' : '#374151',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                outline: 'none',
+                borderLeft: 'none',
+              }}
+              aria-pressed={lang === 'bm'}
+            >
+              BM
+            </button>
+          </div>
+        </div>
       </div>
     </header>
   )

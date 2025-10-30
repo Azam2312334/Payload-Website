@@ -1,7 +1,8 @@
-import { getPayload } from 'payload'
-import config from '@/payload.config'
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 // Helper function to extract text from Lexical richText content
 function extractTextFromLexical(content: any): string {
@@ -22,44 +23,50 @@ function extractTextFromLexical(content: any): string {
   return content.root.children.map(extractText).join('\n')
 }
 
-export default async function DigitalContentPage() {
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
-  let result
-  try {
-    result = await payload.find({
-      collection: 'pages',
-      where: {
-        pageType: {
-          equals: 'digitalContent',
-        },
-      },
-      limit: 1,
-      depth: 2,
-    })
-  } catch (e) {
+export default function DigitalContentPage() {
+  const { lang } = useLanguage()
+  const [page, setPage] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function fetchPage() {
+      setLoading(true)
+      setError(null)
+      try {
+        const res = await fetch('/api/pages/digital-content')
+        if (!res.ok) throw new Error('Failed to fetch')
+        const data = await res.json()
+        if (!data || !data.docs || data.docs.length === 0) {
+          setError('Digital Content page not found')
+          setPage(null)
+        } else {
+          setPage(data.docs[0])
+        }
+      } catch (e) {
+        setError('Digital Content page is not available (table missing)')
+        setPage(null)
+      }
+      setLoading(false)
+    }
+    fetchPage()
+  }, [])
+
+  if (loading) {
+    return (
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>Loading...</div>
+    )
+  }
+  if (error) {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
-        <h1>Digital Content page is not available (table missing)</h1>
-        <p>
-          Please create the table/collection and a Digital Content page in the Payload admin panel.
-        </p>
+        <h1>{error}</h1>
       </div>
     )
   }
+  if (!page) return null
 
-  if (!result || result.docs.length === 0) {
-    return (
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
-        <h1>Digital Content page not found</h1>
-        <p>Please create a Digital Content page in the Payload admin panel.</p>
-      </div>
-    )
-  }
-
-  const page = result.docs[0]
-
-  // --- Go Live logic: return 404 if not live yet ---
+  // --- Go Live logic: return nothing if not live yet ---
   const now = new Date()
   if (page.goLiveAt) {
     let goLiveDateTime: Date
@@ -71,11 +78,22 @@ export default async function DigitalContentPage() {
       goLiveDateTime = new Date(page.goLiveAt.slice(0, 10) + 'T00:00:00')
     }
     if (now < goLiveDateTime) {
-      // Not live yet
-      // Use Next.js notFound for consistency
-      const { notFound } = await import('next/navigation')
-      return notFound()
+      return null
     }
+  }
+
+  // Helper: check if a block is live
+  const isBlockLive = (block: any) => {
+    if (!block.goLiveAt) return true
+    let goLiveDateTime: Date
+    if (block.goLiveTime) {
+      const dateStr = block.goLiveAt.slice(0, 10)
+      const timeStr = block.goLiveTime.length === 5 ? block.goLiveTime : '00:00'
+      goLiveDateTime = new Date(`${dateStr}T${timeStr}:00`)
+    } else {
+      goLiveDateTime = new Date(block.goLiveAt.slice(0, 10) + 'T00:00:00')
+    }
+    return now >= goLiveDateTime
   }
 
   return (
@@ -83,7 +101,7 @@ export default async function DigitalContentPage() {
       <h1 style={{ display: 'none' }}>{page.title}</h1>
 
       {page.digitalContentBlocks
-        ?.filter((block: any) => !block.hideBlock)
+        ?.filter((block: any) => !block.hideBlock && isBlockLive(block))
         .map((block: any, index: number) => {
           switch (block.blockType) {
             // 1. Digital Content Hero
@@ -165,7 +183,7 @@ export default async function DigitalContentPage() {
                           lineHeight: '1.2',
                         }}
                       >
-                        {block.bannerText}
+                        {lang === 'bm' ? block.bannerText_bm : block.bannerText}
                       </h2>
                       <p
                         style={{
@@ -175,9 +193,9 @@ export default async function DigitalContentPage() {
                           lineHeight: '1.6',
                         }}
                       >
-                        {block.bannerDescription}
+                        {lang === 'bm' ? block.bannerDescription_bm : block.bannerDescription}
                       </p>
-                      {block.ctaText && block.ctaLink && (
+                      {(lang === 'bm' ? block.ctaText_bm : block.ctaText) && block.ctaLink && (
                         <Link
                           href={block.ctaLink}
                           style={{
@@ -192,7 +210,7 @@ export default async function DigitalContentPage() {
                             transition: 'background 0.3s ease',
                           }}
                         >
-                          {block.ctaText}
+                          {lang === 'bm' ? block.ctaText_bm : block.ctaText}
                         </Link>
                       )}
                     </div>
