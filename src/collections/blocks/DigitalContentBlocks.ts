@@ -248,14 +248,40 @@ export const GlobalChampion: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
-      name: 'description',
-      type: 'textarea',
-      required: true,
+      type: 'row',
+      fields: [
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Description (EN)',
+          required: true,
+          admin: { width: '50%' },
+        },
+        {
+          name: 'description_bm',
+          type: 'textarea',
+          label: 'Description (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'image',
@@ -278,24 +304,63 @@ export const NationalImpact: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'National Impact',
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          defaultValue: 'National Impact',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
-      name: 'description',
-      type: 'textarea',
-      required: true,
+      type: 'row',
+      fields: [
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Description (EN)',
+          required: true,
+          admin: { width: '50%' },
+        },
+        {
+          name: 'description_bm',
+          type: 'textarea',
+          label: 'Description (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'stats',
       type: 'array',
       fields: [
         {
-          name: 'label',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              label: 'Label (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'label_bm',
+              type: 'text',
+              label: 'Label (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'value',
@@ -350,14 +415,40 @@ export const IndustrySize: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Industry Size',
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          defaultValue: 'Industry Size',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
-      name: 'description',
-      type: 'textarea',
+      type: 'row',
+      fields: [
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Description (EN)',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'description_bm',
+          type: 'textarea',
+          label: 'Description (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'companies',
@@ -366,9 +457,22 @@ export const IndustrySize: Block = {
       maxRows: 3,
       fields: [
         {
-          name: 'label',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              label: 'Label (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'label_bm',
+              type: 'text',
+              label: 'Label (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'count',
@@ -398,24 +502,63 @@ export const OurHighlights: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Our Highlights',
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          defaultValue: 'Our Highlights',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'cards',
       type: 'array',
       fields: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              label: 'Title (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'title_bm',
+              type: 'text',
+              label: 'Title (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
-          name: 'description',
-          type: 'textarea',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'description_bm',
+              type: 'textarea',
+              label: 'Description (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'url',
@@ -445,24 +588,63 @@ export const ProgrammesInitiatives: Block = {
       },
     },
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Other Programmes & Initiatives',
+      type: 'row',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading (EN)',
+          required: true,
+          defaultValue: 'Other Programmes & Initiatives',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'heading_bm',
+          type: 'text',
+          label: 'Heading (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'items',
       type: 'array',
       fields: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              label: 'Title (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'title_bm',
+              type: 'text',
+              label: 'Title (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
-          name: 'description',
-          type: 'textarea',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'description_bm',
+              type: 'textarea',
+              label: 'Description (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'image',

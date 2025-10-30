@@ -73,7 +73,7 @@ export function Header({ data }: HeaderProps) {
                 fontWeight: '500',
               }}
             >
-              {link.label}
+              {lang === 'bm' && link.label_bm ? link.label_bm : link.label}
             </Link>
           ))}
         </nav>
@@ -96,7 +96,11 @@ export function Header({ data }: HeaderProps) {
                 transition: 'background-color 0.2s',
                 border: '1px solid #e5e7eb',
               }}
-              title={data.ctaButton.text || 'Menu'}
+              title={
+                lang === 'bm' && data.ctaButton.text_bm
+                  ? data.ctaButton.text_bm
+                  : data.ctaButton.text || 'Menu'
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

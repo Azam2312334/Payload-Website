@@ -1,14 +1,19 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Globe } from 'lucide-react'
+
 import type { Footer as FooterType, Media } from '@/payload-types'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface FooterProps {
   data: FooterType
 }
 
 export function Footer({ data }: FooterProps) {
+  const { lang } = useLanguage()
+
   // Flatten all links from all columns into a single array
   const allLinks = data.columns?.flatMap((column) => column.links || []) || []
 
@@ -47,11 +52,15 @@ export function Footer({ data }: FooterProps) {
                 style={{ marginBottom: '16px', objectFit: 'contain' }}
               />
             ) : null}
-            {data.description && (
+            {lang === 'bm' && data.description_bm ? (
+              <p style={{ color: textColor, lineHeight: '1.6', marginTop: '16px' }}>
+                {data.description_bm}
+              </p>
+            ) : data.description ? (
               <p style={{ color: textColor, lineHeight: '1.6', marginTop: '16px' }}>
                 {data.description}
               </p>
-            )}
+            ) : null}
           </div>
 
           {/* Center Image */}
@@ -173,7 +182,7 @@ export function Footer({ data }: FooterProps) {
                         whiteSpace: 'nowrap',
                       }}
                     >
-                      {link.label}
+                      {lang === 'bm' && link.label_bm ? link.label_bm : link.label}
                     </Link>
                     {index < allLinks.length - 1 && <span style={{ color: textColor }}>|</span>}
                   </React.Fragment>
@@ -182,7 +191,9 @@ export function Footer({ data }: FooterProps) {
             )}
 
             {/* Copyright Text */}
-            <p style={{ color: textColor, margin: 0, fontSize: '16px' }}>{data.copyrightText}</p>
+            <p style={{ color: textColor, margin: 0, fontSize: '16px' }}>
+              {lang === 'bm' && data.copyrightText_bm ? data.copyrightText_bm : data.copyrightText}
+            </p>
           </div>
         </div>
       </div>

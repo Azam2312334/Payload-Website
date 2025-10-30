@@ -20,9 +20,22 @@ export const Header: GlobalConfig = {
       label: 'Navigation Links',
       fields: [
         {
-          name: 'label',
-          type: 'text',
-          required: true,
+          type: 'row',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              label: 'Label (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'label_bm',
+              type: 'text',
+              label: 'Label (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'url',
@@ -46,9 +59,21 @@ export const Header: GlobalConfig = {
       label: 'CTA Button (optional)',
       fields: [
         {
-          name: 'text',
-          type: 'text',
-          label: 'Button Text',
+          type: 'row',
+          fields: [
+            {
+              name: 'text',
+              type: 'text',
+              label: 'Button Text (EN)',
+              admin: { width: '50%' },
+            },
+            {
+              name: 'text_bm',
+              type: 'text',
+              label: 'Button Text (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'url',

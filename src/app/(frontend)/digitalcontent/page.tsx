@@ -237,7 +237,7 @@ export default function DigitalContentPage() {
                         color: 'black',
                       }}
                     >
-                      {block.heading}
+                      {lang === 'bm' ? block.heading_bm : block.heading}
                     </h2>
                     <div
                       style={{
@@ -259,7 +259,7 @@ export default function DigitalContentPage() {
                             <div style={{ flexShrink: 0 }}>
                               <Image
                                 src={area.icon.url}
-                                alt={area.icon.alt || area.title}
+                                alt={area.icon.alt || (lang === 'bm' ? area.title_bm : area.title)}
                                 width={80}
                                 height={80}
                               />
@@ -269,10 +269,10 @@ export default function DigitalContentPage() {
                             <h3
                               style={{ fontSize: '1.5rem', marginBottom: '12px', color: 'black' }}
                             >
-                              {area.title}
+                              {lang === 'bm' ? area.title_bm : area.title}
                             </h3>
                             <p style={{ color: 'black', lineHeight: '1.6', opacity: 0.8 }}>
-                              {area.description}
+                              {lang === 'bm' ? area.description_bm : area.description}
                             </p>
                           </div>
                         </div>
@@ -297,7 +297,11 @@ export default function DigitalContentPage() {
                   {block.image && typeof block.image === 'object' && block.image.url && (
                     <Image
                       src={block.image.url}
-                      alt={block.image.alt || 'Global Champion'}
+                      alt={
+                        block.image.alt ||
+                        (lang === 'bm' ? block.heading_bm : block.heading) ||
+                        'Global Champion'
+                      }
                       fill
                       style={{ objectFit: 'cover', zIndex: -1 }}
                     />
@@ -340,8 +344,7 @@ export default function DigitalContentPage() {
                             lineHeight: '1.4',
                           }}
                         >
-                          {block.heading?.replace(/Global Champions in Digital Content/i, '')}
-                          <strong>Global Champions in Digital Content</strong>
+                          {lang === 'bm' ? block.heading_bm : block.heading}
                         </h2>
                         <p
                           style={{
@@ -351,7 +354,7 @@ export default function DigitalContentPage() {
                             textAlign: 'left',
                           }}
                         >
-                          {block.description}
+                          {lang === 'bm' ? block.description_bm : block.description}
                         </p>
                       </div>
                     </div>
@@ -378,7 +381,7 @@ export default function DigitalContentPage() {
                         color: 'black',
                       }}
                     >
-                      {block.heading}
+                      {lang === 'bm' ? block.heading_bm : block.heading}
                     </h2>
                     <p
                       style={{
@@ -390,7 +393,7 @@ export default function DigitalContentPage() {
                         maxWidth: '800px',
                       }}
                     >
-                      {block.description}
+                      {lang === 'bm' ? block.description_bm : block.description}
                     </p>
                     <div
                       style={{
@@ -422,7 +425,7 @@ export default function DigitalContentPage() {
                             {stat.icon && typeof stat.icon === 'object' && stat.icon.url && (
                               <Image
                                 src={stat.icon.url}
-                                alt={stat.icon.alt || stat.label}
+                                alt={stat.icon.alt || (lang === 'bm' ? stat.label_bm : stat.label)}
                                 width={140}
                                 height={140}
                               />
@@ -447,7 +450,7 @@ export default function DigitalContentPage() {
                               fontSize: '1.1rem',
                             }}
                           >
-                            {stat.label}
+                            {lang === 'bm' ? stat.label_bm : stat.label}
                           </div>
                         </div>
                       ))}
@@ -475,15 +478,9 @@ export default function DigitalContentPage() {
                         color: 'black',
                       }}
                     >
-                      {block.heading?.includes('Industry Size') ? (
-                        <>
-                          Industry <strong>Size</strong>
-                        </>
-                      ) : (
-                        block.heading
-                      )}
+                      {lang === 'bm' ? block.heading_bm : block.heading}
                     </h2>
-                    {block.description && (
+                    {(block.description || block.description_bm) && (
                       <p
                         style={{
                           textAlign: 'left',
@@ -494,7 +491,7 @@ export default function DigitalContentPage() {
                           maxWidth: '800px',
                         }}
                       >
-                        {block.description}
+                        {lang === 'bm' ? block.description_bm : block.description}
                       </p>
                     )}
                     <div
@@ -509,7 +506,10 @@ export default function DigitalContentPage() {
                           {company.icon && typeof company.icon === 'object' && company.icon.url && (
                             <Image
                               src={company.icon.url}
-                              alt={company.icon.alt || company.label}
+                              alt={
+                                company.icon.alt ||
+                                (lang === 'bm' ? company.label_bm : company.label)
+                              }
                               width={60}
                               height={60}
                               style={{ margin: '0 auto 16px' }}
@@ -525,7 +525,9 @@ export default function DigitalContentPage() {
                           >
                             {company.count}
                           </div>
-                          <div style={{ color: 'black', opacity: 0.7 }}>{company.label}</div>
+                          <div style={{ color: 'black', opacity: 0.7 }}>
+                            {lang === 'bm' ? company.label_bm : company.label}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -552,13 +554,7 @@ export default function DigitalContentPage() {
                         color: 'white',
                       }}
                     >
-                      {block.heading?.includes('Our Highlights') ? (
-                        <>
-                          Our <strong>Highlights</strong>
-                        </>
-                      ) : (
-                        block.heading
-                      )}
+                      {lang === 'bm' ? block.heading_bm : block.heading}
                     </h2>
                     <div
                       style={{
@@ -584,7 +580,7 @@ export default function DigitalContentPage() {
                           {card.image && typeof card.image === 'object' && card.image.url && (
                             <Image
                               src={card.image.url}
-                              alt={card.image.alt || card.title}
+                              alt={card.image.alt || (lang === 'bm' ? card.title_bm : card.title)}
                               width={300}
                               height={200}
                               style={{
@@ -595,8 +591,12 @@ export default function DigitalContentPage() {
                               }}
                             />
                           )}
-                          <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>{card.title}</h3>
-                          <p style={{ opacity: 0.8, lineHeight: '1.6' }}>{card.description}</p>
+                          <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>
+                            {lang === 'bm' ? card.title_bm : card.title}
+                          </h3>
+                          <p style={{ opacity: 0.8, lineHeight: '1.6' }}>
+                            {lang === 'bm' ? card.description_bm : card.description}
+                          </p>
                         </Link>
                       ))}
                     </div>
@@ -623,7 +623,7 @@ export default function DigitalContentPage() {
                         color: 'black',
                       }}
                     >
-                      {block.heading}
+                      {lang === 'bm' ? block.heading_bm : block.heading}
                     </h2>
                     <div
                       style={{
@@ -649,7 +649,7 @@ export default function DigitalContentPage() {
                           {item.image && typeof item.image === 'object' && item.image.url && (
                             <Image
                               src={item.image.url}
-                              alt={item.image.alt || item.title}
+                              alt={item.image.alt || (lang === 'bm' ? item.title_bm : item.title)}
                               width={400}
                               height={250}
                               style={{ width: '100%', height: 'auto' }}
@@ -659,10 +659,10 @@ export default function DigitalContentPage() {
                             <h3
                               style={{ fontSize: '1.5rem', marginBottom: '12px', color: 'black' }}
                             >
-                              {item.title}
+                              {lang === 'bm' ? item.title_bm : item.title}
                             </h3>
                             <p style={{ color: 'black', opacity: 0.8, lineHeight: '1.6' }}>
-                              {item.description}
+                              {lang === 'bm' ? item.description_bm : item.description}
                             </p>
                           </div>
                         </Link>

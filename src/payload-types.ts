@@ -420,7 +420,9 @@ export interface Page {
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             description: string;
+            description_bm?: string | null;
             image?: (number | null) | Media;
             id?: string | null;
             blockName?: string | null;
@@ -432,10 +434,13 @@ export interface Page {
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             description: string;
+            description_bm?: string | null;
             stats?:
               | {
                   label: string;
+                  label_bm?: string | null;
                   value: string;
                   icon?: (number | null) | Media;
                   /**
@@ -456,10 +461,13 @@ export interface Page {
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             description?: string | null;
+            description_bm?: string | null;
             companies?:
               | {
                   label: string;
+                  label_bm?: string | null;
                   count: number;
                   icon?: (number | null) | Media;
                   id?: string | null;
@@ -475,10 +483,13 @@ export interface Page {
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             cards?:
               | {
                   title: string;
+                  title_bm?: string | null;
                   description: string;
+                  description_bm?: string | null;
                   url: string;
                   image?: (number | null) | Media;
                   id?: string | null;
@@ -494,10 +505,13 @@ export interface Page {
              */
             hideBlock?: boolean | null;
             heading: string;
+            heading_bm?: string | null;
             items?:
               | {
                   title: string;
+                  title_bm?: string | null;
                   description: string;
+                  description_bm?: string | null;
                   image: number | Media;
                   url: string;
                   id?: string | null;
@@ -855,7 +869,9 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               description?: T;
+              description_bm?: T;
               image?: T;
               id?: T;
               blockName?: T;
@@ -865,11 +881,14 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               description?: T;
+              description_bm?: T;
               stats?:
                 | T
                 | {
                     label?: T;
+                    label_bm?: T;
                     value?: T;
                     icon?: T;
                     backgroundColor?: T;
@@ -884,11 +903,14 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               description?: T;
+              description_bm?: T;
               companies?:
                 | T
                 | {
                     label?: T;
+                    label_bm?: T;
                     count?: T;
                     icon?: T;
                     id?: T;
@@ -901,11 +923,14 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               cards?:
                 | T
                 | {
                     title?: T;
+                    title_bm?: T;
                     description?: T;
+                    description_bm?: T;
                     url?: T;
                     image?: T;
                     id?: T;
@@ -918,11 +943,14 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               hideBlock?: T;
               heading?: T;
+              heading_bm?: T;
               items?:
                 | T
                 | {
                     title?: T;
+                    title_bm?: T;
                     description?: T;
+                    description_bm?: T;
                     image?: T;
                     url?: T;
                     id?: T;
@@ -1021,6 +1049,7 @@ export interface Header {
   navigation?:
     | {
         label: string;
+        label_bm?: string | null;
         /**
          * Enter relative path (e.g., /about) or full URL
          */
@@ -1031,6 +1060,7 @@ export interface Header {
     | null;
   ctaButton?: {
     text?: string | null;
+    text_bm?: string | null;
     url?: string | null;
   };
   updatedAt?: string | null;
@@ -1056,6 +1086,7 @@ export interface Footer {
   iconColor?: string | null;
   logo?: (number | null) | Media;
   description?: string | null;
+  description_bm?: string | null;
   /**
    * Optional image to display between left and right sections
    */
@@ -1063,9 +1094,11 @@ export interface Footer {
   columns?:
     | {
         heading: string;
+        heading_bm?: string | null;
         links?:
           | {
               label: string;
+              label_bm?: string | null;
               url: string;
               openInNewTab?: boolean | null;
               id?: string | null;
@@ -1086,6 +1119,7 @@ export interface Footer {
       }[]
     | null;
   copyrightText?: string | null;
+  copyrightText_bm?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1099,6 +1133,7 @@ export interface HeaderSelect<T extends boolean = true> {
     | T
     | {
         label?: T;
+        label_bm?: T;
         url?: T;
         openInNewTab?: T;
         id?: T;
@@ -1107,6 +1142,7 @@ export interface HeaderSelect<T extends boolean = true> {
     | T
     | {
         text?: T;
+        text_bm?: T;
         url?: T;
       };
   updatedAt?: T;
@@ -1123,15 +1159,18 @@ export interface FooterSelect<T extends boolean = true> {
   iconColor?: T;
   logo?: T;
   description?: T;
+  description_bm?: T;
   centerImage?: T;
   columns?:
     | T
     | {
         heading?: T;
+        heading_bm?: T;
         links?:
           | T
           | {
               label?: T;
+              label_bm?: T;
               url?: T;
               openInNewTab?: T;
               id?: T;
@@ -1147,6 +1186,7 @@ export interface FooterSelect<T extends boolean = true> {
         id?: T;
       };
   copyrightText?: T;
+  copyrightText_bm?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

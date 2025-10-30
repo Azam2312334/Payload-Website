@@ -29,11 +29,13 @@
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
+    "i18next": "^25.6.0",
     "lucide-react": "^0.546.0",
     "next": "15.4.4",
     "payload": "3.59.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-i18next": "^16.2.1",
     "sharp": "0.34.2"
   },
   "devDependencies": {

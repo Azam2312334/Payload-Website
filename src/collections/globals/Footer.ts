@@ -41,9 +41,21 @@ export const Footer: GlobalConfig = {
       label: 'Footer Logo',
     },
     {
-      name: 'description',
-      type: 'textarea',
-      label: 'Company Description',
+      type: 'row',
+      fields: [
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Company Description (EN)',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'description_bm',
+          type: 'textarea',
+          label: 'Company Description (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
     {
       name: 'centerImage',
@@ -60,10 +72,22 @@ export const Footer: GlobalConfig = {
       label: 'Footer Columns',
       fields: [
         {
-          name: 'heading',
-          type: 'text',
-          required: true,
-          label: 'Column Heading',
+          type: 'row',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              label: 'Column Heading (EN)',
+              required: true,
+              admin: { width: '50%' },
+            },
+            {
+              name: 'heading_bm',
+              type: 'text',
+              label: 'Column Heading (BM)',
+              admin: { width: '50%' },
+            },
+          ],
         },
         {
           name: 'links',
@@ -71,9 +95,22 @@ export const Footer: GlobalConfig = {
           label: 'Links',
           fields: [
             {
-              name: 'label',
-              type: 'text',
-              required: true,
+              type: 'row',
+              fields: [
+                {
+                  name: 'label',
+                  type: 'text',
+                  label: 'Label (EN)',
+                  required: true,
+                  admin: { width: '50%' },
+                },
+                {
+                  name: 'label_bm',
+                  type: 'text',
+                  label: 'Label (BM)',
+                  admin: { width: '50%' },
+                },
+              ],
             },
             {
               name: 'url',
@@ -123,10 +160,22 @@ export const Footer: GlobalConfig = {
       ],
     },
     {
-      name: 'copyrightText',
-      type: 'text',
-      label: 'Copyright Text',
-      defaultValue: '© 2025 Your Company. All rights reserved.',
+      type: 'row',
+      fields: [
+        {
+          name: 'copyrightText',
+          type: 'text',
+          label: 'Copyright Text (EN)',
+          defaultValue: '© 2025 Your Company. All rights reserved.',
+          admin: { width: '50%' },
+        },
+        {
+          name: 'copyrightText_bm',
+          type: 'text',
+          label: 'Copyright Text (BM)',
+          admin: { width: '50%' },
+        },
+      ],
     },
   ],
 }
