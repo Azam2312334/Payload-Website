@@ -1,1 +1,1 @@
-.indexes pages_blocks_focus_area
+DROP INDEX IF EXISTS pages_blocks_focus_area_order_idx;
